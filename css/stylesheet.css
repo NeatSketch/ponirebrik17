@@ -1,0 +1,369 @@
+@font-face {
+    font-family: hagin;
+    src: url('../res/hagin_caps_medium.ttf');
+}
+@font-face {
+    font-family: ubuntucondensed;
+    src: url('../res/ubuntu-condensed.woff2');
+}
+@font-face {
+    font-family: ubuntucondensedlatin;
+    src: url('../res/ubuntu-condensed-latin.woff2');
+}
+@font-face {
+    font-family: ubuntu;
+    src: url('../res/Ubuntu-Regular.ttf');
+}
+body {
+	font-family: ubuntucondensed, ubuntucondensedlatin, sans-serif;
+	font-size: 14pt;
+	padding: 0;
+	margin: 0;
+	color: #fff;
+	overflow-x: hidden;
+}
+body > div {
+	padding: 14pt;
+	margin: 0;
+}
+a {
+	color: #fff;
+}
+a:visited {
+	color: #fff;
+}
+a:hover {
+	color: #fff;
+}
+a:active {
+	color: #1a3c70;
+}
+.parallax {
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center;
+	text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5pt;
+}
+.overlapping {
+	position: relative;
+	box-shadow: 0pt 0pt 10pt 0pt rgba(0,0,0,0.5);
+	background-image: url("../img/Background-Piter-200px.png");
+}
+#logo {
+	width: 100%;
+}
+#header-main {
+	width: 75%;
+	display: inline-block;
+}
+#title-bar {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 12pt;
+}
+#title-bar > div {
+	display: inline-block;
+	text-align: center;
+	background: rgba(26, 60, 112, .3);
+}
+#title-bar a {
+	display: inline-block;
+	padding: 14pt;
+	color: #fff;
+}
+#title-bar a:visited {
+	color: #fff;
+}
+#title-bar a:hover {
+	color: #fff;
+	background: #1a3c70;
+}
+#title-bar a:active {
+	color: #fff;
+	background: #000;
+}
+#header {
+	padding-top: 20pt;
+	padding-bottom: 20pt;
+	text-align: center;
+	background-image: url("../img/Rain.jpg");
+}
+#header-top {
+	text-align: justify;
+}
+#header-top:after {
+	content: "";
+	width: 100%;
+	display: inline-block;
+}
+#age-rating {
+	display: inline-block;
+	width: 32pt;
+	height: 32pt;
+	font-size: 15pt;
+	line-height: 32pt;
+	text-align: center;
+	border: 2pt solid #fff;
+	border-radius: 18pt;
+}
+#event-date {
+	display: inline-block;
+	position: relative;
+	bottom: 1pt;
+	height: 32pt;
+}
+#event-date > strong {
+	position: relative;
+	font-size: 20pt;
+	top: 3pt;
+}
+#section1 {
+	overflow: auto;
+	padding-left: 7pt;
+	padding-right: 7pt;
+	padding-bottom: 0;
+	line-height: 100%;
+}
+#section1 > div > div {
+	padding-left: 7pt;
+	padding-right: 7pt;
+	padding-bottom: 14pt;
+}
+#section1-special-background {
+	display: none;
+}
+#section1-text {
+	padding: 14pt;
+	text-align: center;
+	background: rgba(26, 60, 112, .3);
+}
+#section1-text h1 {
+	padding-bottom: 20pt;
+}
+#vk_widget, #vk_groups, #vk_widget_container {
+	overflow: hidden;
+}
+.section-title {
+	margin-top: 40pt;
+	margin-bottom: 40pt;
+	font-size: 46pt;
+	font-size: 10vw;
+	font-family: hagin, sans-serif;
+}
+.section-content {
+	margin-top: 40pt;
+	margin-bottom: 40pt;
+}
+#events {
+	background-image: url("../img/background1.jpg");
+}
+#section3 > div {
+	padding: 14pt;
+	text-align: center;
+	background: rgba(26, 60, 112, .3);
+}
+#cosplay {
+	background-image: url("../img/background2.jpg");
+}
+#section5 > div {
+	padding: 60pt;
+	background: rgba(26, 60, 112, .3);
+}
+#section5 > div > div {
+	margin: -74pt;
+	position: relative;
+}
+#section5 > div > div > img {
+	position: absolute;
+	bottom: -120pt;
+	height: 150pt;
+	left: 50%;
+	margin-left: -52pt;
+}
+#stands {
+	background-image: url("../img/background3.jpg");
+}
+#tickets-form {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+#participant-cards-container {
+	display: inline-block;
+}
+#participant-cards {
+	display: table;
+	border-collapse: separate;
+	border-spacing: 14pt;
+	font-size: 12pt;
+}
+#participant-cards > div {
+	display: block;
+	background: #fff;
+	color: #1a3c70;
+	border-radius: 2pt;
+	padding: 14pt;
+	margin: 8pt;
+}
+#participant-cards strong {
+	display: inline-block;
+	padding-bottom: 8pt;
+}
+#participant-cards a {
+	color: #1a3c70;
+}
+#participant-cards a:visited {
+	color: #1a3c70;
+}
+#participant-cards a:hover {
+	color: #1a3c70;
+}
+#participant-cards a:active {
+	color: #000;
+}
+#event-cards-container {
+	display: inline-block;
+}
+#event-cards {
+	display: table;
+	border-collapse: separate;
+	border-spacing: 14pt;
+}
+#event-cards a {
+	color: #1a3c70;
+}
+#event-cards a:visited {
+	color: #1a3c70;
+}
+#event-cards a:hover {
+	color: #1a3c70;
+}
+#event-cards a:active {
+	color: #000;
+}
+#event-cards > div {
+	display: block;
+	background: #fff;
+	color: #1a3c70;
+	text-shadow: none;
+	border-radius: 2pt;
+	margin: 8pt;
+}
+#date-cal {
+	padding: 0;
+}
+#date-cal-day {
+	font-size: 32pt;
+	padding: 14pt;
+	padding-bottom: 4pt;
+}
+#date-cal-month {
+	font-size: 20pt;
+	padding: 14pt;
+	padding-top: 4pt;
+}
+#map {
+	padding: 0;
+}
+#map > div {
+	padding-top: 14pt;
+	padding-bottom: 14pt;
+}
+#map img {
+	width: 120pt;
+	border-radius: 2pt 2pt 0 0;
+	vertical-align: bottom;
+}
+#tickets-link {
+	display: inline-block;
+	padding: 14pt;
+	color: #fff;
+	background: rgba(26, 60, 112, .3);
+	font-size: 20pt;
+}
+#tickets-link:visited {
+	color: #fff;
+}
+#tickets-link:hover {
+	color: #fff;
+	background: #1a3c70;
+}
+#tickets-link:active {
+	color: #fff;
+	background: #000;
+}
+#footer > div {
+	padding: 14pt;
+	background: rgba(26, 60, 112, .75);
+}
+#footer a {
+	display: inline-block;
+	padding: 2pt;
+	color: #fff;
+}
+#footer p {
+	font-family: ubuntu, sans-serif;
+	font-size: 10pt;
+	text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5pt;
+	padding-left: 2pt;
+}
+@media (min-width: 480pt) {
+	.parallax {
+		background-attachment: fixed;
+	}
+	.section-title {
+		font-size: 46pt;
+	}
+	#header-main {
+		width: 340pt;
+	}
+	#section1 {
+		position: relative;
+	}
+	#welcome, #vk_widget {
+		vertical-align: top;
+		display: inline-block;
+		width: 50%;
+		float: left;
+		clear: none;
+	}
+	#welcome {
+		position: relative;
+		z-index: 10;
+	}
+	#section1-special-background {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 50%;
+		height: 100%;
+		margin-left: 14pt;
+	}
+	#section1-special-background > div {
+		background: rgba(26, 60, 112, .3);
+		position: absolute;
+		top: 14pt;
+		left: 0;
+		right: 21pt;
+		bottom: 14pt;
+		padding: 0 !important;
+	}
+	#section1-text {
+		background: none;
+	}
+	#participant-cards > div {
+		display: table-cell;
+		vertical-align: middle;
+		width: 120pt;
+	}
+	#event-cards > div {
+		display: table-cell;
+		vertical-align: middle;
+	}
+}

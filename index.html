@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
+		<link rel="apple-touch-icon" sizes="57x57" href="/res/apple-icon-57x57.png" />
+		<link rel="apple-touch-icon" sizes="60x60" href="/res/apple-icon-60x60.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="/res/apple-icon-72x72.png" />
+		<link rel="apple-touch-icon" sizes="76x76" href="/res/apple-icon-76x76.png" />
+		<link rel="apple-touch-icon" sizes="114x114" href="/res/apple-icon-114x114.png" />
+		<link rel="apple-touch-icon" sizes="120x120" href="/res/apple-icon-120x120.png" />
+		<link rel="apple-touch-icon" sizes="144x144" href="/res/apple-icon-144x144.png" />
+		<link rel="apple-touch-icon" sizes="152x152" href="/res/apple-icon-152x152.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/res/apple-icon-180x180.png" />
+		<link rel="icon" type="image/png" sizes="192x192"  href="/res/android-icon-192x192.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/res/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="96x96" href="/res/favicon-96x96.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/res/favicon-16x16.png" />
+		<link rel="manifest" href="/res/manifest.json" />
+		<meta name="msapplication-TileColor" content="#1a3c70" />
+		<meta name="msapplication-TileImage" content="/res/ms-icon-144x144.png" />
+		<meta name="theme-color" content="#1a3c70" />
+		<title>Пониребрик</title>
+		<script type="text/javascript" src="//vk.com/js/api/openapi.js?120"></script>
+	</head>
+	<body>
+		<div id="header" class="parallax">
+			<div id="header-main">
+				<div id="header-top">
+					<span id="age-rating">14+</span>
+					<span id="event-date"><strong>31</strong> января</span>
+				</div>
+				<img id="logo" src="./img/Logo_resized_new.png" alt="Лого" />
+			</div>
+			<div id="title-bar">
+				<div>
+					<a href="tickets.html" target="_blank">Билеты</a><a href="#events">О фестивале</a><a href="#cosplay">Косплей</a><a href="#stands">Стенды</a>
+				</div>
+			</div>
+		</div>
+		<div id="section1" class="overlapping">
+			<div id="section1-special-background">
+				<div></div>
+			</div>
+			<div id="welcome">
+				<div>
+					<div id="section1-text">
+						<h1>Привет!</h1>
+						<p>Мы собрали весёлую компанию и хотим увидеть тебя вместе с нами!</p>
+						<p>Присоединяйся!</p>
+					</div>
+				</div>
+			</div>
+			<div id="vk_widget">
+				<div>
+					<div id="vk_widget_container">
+						<div id="vk_groups"></div>
+						<script type="text/javascript">
+							var vk_width_old = 0;
+							function VK_Widget_Init() {
+								var vk_width = document.getElementById('vk_widget_container').clientWidth;
+								var vk_height = 200;
+								if (vk_width != vk_width_old) {
+									document.getElementById('vk_groups').innerHTML = "";
+									VK.Widgets.Group("vk_groups", {mode: 0, width: vk_width, height: vk_height, color1: 'a7d1e4', color2: '1a3c70', color3: '1a3c70'}, 100671883);
+								}
+								vk_width_old = vk_width;
+							}
+							window.addEventListener('load', VK_Widget_Init, false);
+							window.addEventListener('resize', VK_Widget_Init, false);
+						</script>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="events" class="parallax">
+			<div class="section-title">О фестивале</div>
+			<div class="section-content">
+				<p>Первый в Санкт-Петербурге фестиваль сообщества брони — фанатов мультсериала "My Little Pony: Friendship is Magic".</p>
+				<p>В программе фанатская музыка, костюмированные выступления, мерчандайз, мастер-классы, видеоигры и многое другое!</p>
+				<p>31 января 2016 в центре современного искусства имени Сергея Курёхина<br />Санкт-Петербург, средний пр-кт В.О., 93</p>
+				<div id="event-cards-container">
+					<div id="event-cards">
+						<div id="date-cal">
+							<div id="date-cal-day">31</div>
+							<div id="date-cal-month">января</div>
+						</div>
+						<div id="map">
+							<a href="https://www.google.com/maps/place/%D0%A6%D0%B5%D0%BD%D1%82%D1%80+%D1%81%D0%BE%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE+%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B0+%D0%B8%D0%BC.+%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D1%8F+%D0%9A%D1%83%D1%80%D1%91%D1%85%D0%B8%D0%BD%D0%B0/@59.9414276,30.2336056,13.5z/data=!4m2!3m1!1s0x0:0xf158f79b91ce52a6?hl=ru-RU" target="_blank"><img src="./img/map.png" alt="Карта" /></a>
+							<div><a href="https://www.google.com/maps/place/%D0%A6%D0%B5%D0%BD%D1%82%D1%80+%D1%81%D0%BE%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE+%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B0+%D0%B8%D0%BC.+%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D1%8F+%D0%9A%D1%83%D1%80%D1%91%D1%85%D0%B8%D0%BD%D0%B0/@59.9414276,30.2336056,13.5z/data=!4m2!3m1!1s0x0:0xf158f79b91ce52a6?hl=ru-RU" target="_blank">Открыть карту</a></div>
+						</div>
+					</div>
+				</div>
+				<p><a id="tickets-link" href="tickets.html" target="_blank">Купить билет</a></p>
+			</div>
+		</div>
+		<div id="section3" class="overlapping">
+			<div>
+				<p>Ты можешь стать частью мероприятия!</p>
+				<div id="participant-cards-container">
+					<div id="participant-cards">
+						<div><strong>Делаешь косплей или сценку?</strong><br />Для тебя <a href="https://vk.com/ponirebrik?w=wall-100671883_178" target="_blank">предусмотрены скидки</a>!</div>
+						<div><strong>Делаешь стенд, арт-инсталляцию?</strong><br />Получи <a href="https://vk.com/ponirebrik?w=wall-100671883_197" target="_blank">информацию</a>.</div>
+						<div><strong>Делаешь что-то особенное?</strong><br /><a href="mailto:ponirebrik@gmail.com">Напиши нам!</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="cosplay" class="parallax">
+			<div class="section-title">Косплей</div>
+			<div class="section-content">
+				<p>Цветные, с гривами и хвостами, отыгрывающие роли любимых персонажей — косплееры!<br />Они — обязательный атрибут любой большой брони-вечеринки. И, конечно же, они будут вместе с нами!</p>
+				<p>Мы устраиваем представления с косплеерами, в которых, кстати, можешь принять участие и ты.</p>
+				<p><a href="https://vk.com/ponirebrik?w=wall-100671883_178" target="_blank">Зарегистрируй свой косплей</a></p>
+			</div>
+		</div>
+		<div id="section5" class="overlapping">
+			<div>
+				<div><img src="./img/pony.png" alt="Пони" /></div>
+			</div>
+		</div>
+		<div id="stands" class="parallax">
+			<div class="section-title">Стенды</div>
+			<div class="section-content">
+				<p>Арт-инсталляции, торговые точки, интерактивные стенды — всё это будет у нас!<br />Каждый сможет найти то, что ему нравится: обычный мерч и мерч ручной работы, игрушки и безделушки, арт и игры!</p>
+				<p>Мы собираем вместе творческих людей, и, может быть, ты станешь одним из них?</p>
+				<p><a href="https://vk.com/ponirebrik?w=wall-100671883_197" target="_blank">Зарегистрируй свой стенд</a></p>
+			</div>
+		</div>
+		<div id="footer" class="overlapping">
+			<div>
+				<a href="terms.html" target="_blank">Правила</a>
+				<br />
+				<a href="tickets.html" target="_blank">Купить билет</a>
+				<p>Несовершеннолетние, не достигшие 14-летнего возраста, могут пройти на фестиваль только с совершеннолетним сопровождающим (с 18-ти лет). Если лицо, сопровождающее несовершеннолетнего, не является его родителем, то необходимо разрешение одного из родителей в простой письменной форме (<a href="./files/Soglasie_Na_Soprovozhdenie.docx">скачать бланк разрешения</a>). Билеты должны иметься как у сопровождаемого гостя, так и у сопровождающего. Исключение: один ребёнок до шести лет может пройти в сопровождении родителей бесплатно.</p>
+				<a href="https://vk.com/ponirebrik">vk.com/ponirebrik</a>
+				<br />
+				<a href="mailto:ponirebrik@gmail.com">ponirebrik@gmail.com</a>
+			</div>
+		</div>
+	</body>
+</html>
