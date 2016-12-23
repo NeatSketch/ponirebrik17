@@ -21,6 +21,12 @@ body {
 	margin: 0;
 	color: #fff;
 	overflow-x: hidden;
+
+	background-color: #1a3c70;
+	/*background-image: url("../img/Rain.jpg");
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;*/
 }
 body > div {
 	padding: 14pt;
@@ -45,6 +51,7 @@ a:active {
 	top: 100%;
 	z-index: 9999;
 	background: rgba(26, 60, 112, .7);
+	/*text-align: left;*/
 }
 .parallax {
 	background-position: 50% 50%;
@@ -61,6 +68,11 @@ a:active {
 #logo {
 	width: 100%;
 }
+#logo-text {
+	height: 40pt;
+	vertical-align: middle;
+	padding: 14pt;
+}
 #header-main {
 	width: 75%;
 	display: inline-block;
@@ -69,6 +81,7 @@ a:active {
 	padding-top: 0;
 	padding-bottom: 0;
 	/*margin-top: 12pt;*/
+	display: inline-block;
 }
 #title-bar > div {
 	display: inline-block;
@@ -101,8 +114,8 @@ a:active {
 	white-space: nowrap;
 }
 #header {
-	padding-top: 20pt;
-	padding-bottom: 20pt;
+	/*padding-top: 20pt;*/
+	/*padding-bottom: 20pt;*/
 	text-align: center;
 	background-image: url("../img/Rain.jpg");
 }
@@ -314,14 +327,27 @@ a:active {
 	color: #fff;
 	background: #000;
 }
+#footer {
+	/*background-image: url("../img/Rain.jpg");*/
+	padding: 0;
+	padding-bottom: 14pt;
+}
 #footer > div {
-	padding: 14pt;
-	background: rgba(26, 60, 112, .75);
+	/*background: rgba(26, 60, 112, .75);*/
 }
 #footer a {
 	display: inline-block;
 	padding: 2pt;
 	color: #fff;
+	text-decoration: none;
+}
+#footer a span {
+	text-decoration: underline;
+}
+#footer a img {
+	vertical-align: middle;
+	height: 14pt;
+	padding: 2pt;
 }
 #footer p {
 	font-family: ubuntu, sans-serif;
@@ -329,9 +355,19 @@ a:active {
 	text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5pt;
 	padding-left: 2pt;
 }
+#footer div div {
+	display: inline-block;
+	text-align: left;
+	vertical-align: middle;
+	padding: 14pt;
+	padding-bottom: 0;
+}
 @media (min-width: 480pt) {
 	*:hover > .dropdown {
 		display: block;
+	}
+	body {
+		background-attachment: fixed;
 	}
 	.parallax {
 		background-attachment: fixed;
