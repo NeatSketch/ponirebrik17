@@ -72,6 +72,8 @@ a:active {
 	height: 40pt;
 	vertical-align: middle;
 	padding: 14pt;
+	padding-left: 7pt;
+	padding-right: 7pt;
 }
 #header-main {
 	width: 75%;
@@ -80,6 +82,8 @@ a:active {
 #title-bar {
 	padding-top: 0;
 	padding-bottom: 0;
+	padding-left: 7pt;
+	padding-right: 7pt;
 	/*margin-top: 12pt;*/
 	display: inline-block;
 }
@@ -126,6 +130,17 @@ a:active {
 	content: "";
 	width: 100%;
 	display: inline-block;
+}
+#content {
+	text-align: center;
+}
+#content > div {
+	background-color: #fff;
+	border-radius: 2pt;
+	padding: 14pt;
+	max-width: 466pt;
+	margin-left: auto;
+	margin-right: auto;
 }
 #age-rating {
 	display: inline-block;
@@ -175,15 +190,17 @@ a:active {
 	overflow: hidden;
 }
 .section-title {
-	margin-top: 40pt;
-	margin-bottom: 40pt;
+	/*margin-top: 40pt;*/
+	margin-bottom: 20pt;
 	font-size: 46pt;
 	font-size: 10vw;
 	font-family: hagin, sans-serif;
+	color: #1a3c70;
 }
 .section-content {
-	margin-top: 40pt;
-	margin-bottom: 40pt;
+	margin-top: 20pt;
+	/*margin-bottom: 40pt;*/
+	color: #1a3c70;
 }
 #events {
 	background-image: url("../img/background1.jpg");
@@ -335,16 +352,16 @@ a:active {
 #footer > div {
 	/*background: rgba(26, 60, 112, .75);*/
 }
-#footer a {
+#contacts a {
 	display: inline-block;
 	padding: 2pt;
 	color: #fff;
 	text-decoration: none;
 }
-#footer a span {
+#contacts a span {
 	text-decoration: underline;
 }
-#footer a img {
+#contacts a img {
 	vertical-align: middle;
 	height: 14pt;
 	padding: 2pt;
