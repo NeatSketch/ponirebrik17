@@ -38,6 +38,14 @@ a:hover {
 a:active {
 	color: #1a3c70;
 }
+.dropdown {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	z-index: 9999;
+	background: rgba(26, 60, 112, .7);
+}
 .parallax {
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
@@ -60,28 +68,37 @@ a:active {
 #title-bar {
 	padding-top: 0;
 	padding-bottom: 0;
-	margin-top: 12pt;
+	/*margin-top: 12pt;*/
 }
 #title-bar > div {
 	display: inline-block;
 	text-align: center;
 	background: rgba(26, 60, 112, .3);
 }
-#title-bar a {
+#title-bar > div > div {
+	position: relative;
+	padding-top: 14pt;
+	padding-bottom: 14pt;
 	display: inline-block;
+}
+#title-bar > div > div > a, .dropdown a {
 	padding: 14pt;
 	color: #fff;
 }
-#title-bar a:visited {
+#title-bar > div > div > a:visited, .dropdown a:visited {
 	color: #fff;
 }
-#title-bar a:hover {
+#title-bar > div > div:hover > a, .dropdown a:hover {
 	color: #fff;
 	background: #1a3c70;
 }
-#title-bar a:active {
+#title-bar > div > div > a:active, .dropdown a:active {
 	color: #fff;
 	background: #000;
+}
+.dropdown a {
+	display: block;
+	white-space: nowrap;
 }
 #header {
 	padding-top: 20pt;
@@ -313,6 +330,9 @@ a:active {
 	padding-left: 2pt;
 }
 @media (min-width: 480pt) {
+	*:hover > .dropdown {
+		display: block;
+	}
 	.parallax {
 		background-attachment: fixed;
 	}
