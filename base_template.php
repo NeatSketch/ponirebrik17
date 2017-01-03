@@ -12,7 +12,7 @@
 		$time = time();
 		$user_agent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : 'unknown';
 		$log_entry = "$time -- $document_name -- $user_agent\n";
-		file_put_contents('./logs/site-access.txt', $log_entry, FILE_APPEND);
+		file_put_contents("./logs/site-access.txt", $log_entry, FILE_APPEND | LOCK_EX);
 ?>
 <!DOCTYPE html>
 <html>
