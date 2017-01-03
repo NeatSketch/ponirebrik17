@@ -1,3 +1,14 @@
+<?php
+	function page($filename, $title = null) {
+		if (!isset($title)) {
+			$title = 'Пониребрик';
+			$head_title = $title;
+		} else {
+			$head_title = "Пониребрик — $title";
+		}
+    	$document_name = basename($filename, '.php');
+    	$content = file_get_contents("./content/$document_name.html");
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -21,7 +32,7 @@
 		<meta name="msapplication-TileColor" content="#1a3c70" />
 		<meta name="msapplication-TileImage" content="/res/ms-icon-144x144.png" />
 		<meta name="theme-color" content="#1a3c70" />
-		<title>Пониребрик</title>
+		<title><?php echo $head_title; ?></title>
 		<!--<script type="text/javascript" src="//vk.com/js/api/openapi.js?120"></script>-->
 	</head>
 	<body>
@@ -33,33 +44,33 @@
 				</div>
 				<img id="logo" src="./img/Logo_resized_new.png" alt="Лого" />
 			</div>-->
-			<img id="logo-text" src="./img/Logo-text.png" alt="Лого" />
+			<a href="index.php"><img id="logo-text" src="./img/Logo-text.png" alt="Лого" /></a>
 			<div id="title-bar">
 				<div>
-					<div><a href="index.html">Главная</a></div>
+					<div><a href="index.php">Главная</a></div>
 					<div>
-						<a href="about.html">О мероприятии</a>
+						<a href="about.php">О мероприятии</a>
 						<div class="dropdown">
-							<a href="faq.html">FAQ</a>
-							<a href="rules.html">Правила</a>
+							<a href="faq.php" title="FAQ — часто задаваемые вопросы">FAQ</a>
+							<a href="rules.php">Правила</a>
 						</div>
 					</div>
 					<div>
-						<a href="tickets.html">Билеты</a>
+						<a href="tickets.php">Билеты</a>
 						<div class="dropdown">
-							<a href="ticket1.html">Первый билет</a>
-							<a href="ticket2.html">Второй билет</a>
-							<a href="ticket3.html">Третий билет</a>
-							<a href="ticket4.html">Четвёртый билет</a>
+							<a href="ticket1.php">Билет «Рядовой Путаница»</a>
+							<a href="ticket2.php">Билет «Лейтенант Бардак»</a>
+							<a href="ticket3.php">Билет «Капитан Бедлам»</a>
+							<a href="ticket4.php">Билет «Генерал Переворот»</a>
 						</div>
 					</div>
 					<div>
-						<a href="reg.html">Регистрация</a>
+						<a href="reg.php">Регистрация</a>
 						<div class="dropdown">
-							<a href="stands-reg.html">Стенды</a>
-							<a href="cosplay-reg.html">Косплей</a>
-							<a href="singing-contest-reg.html">Вокальный конкурс</a>
-							<a href="press-reg.html">Пресса</a>
+							<a href="stands-reg.php">Стенды</a>
+							<a href="cosplay-reg.php">Косплей</a>
+							<a href="singing-contest-reg.php">Вокальный конкурс</a>
+							<a href="press-reg.php">Пресса</a>
 						</div>
 					</div>
 				</div>
@@ -67,9 +78,11 @@
 		</div>
 		<div id="content" class="overlapping">
 			<div>
-				<div class="section-title">Заголовок</div>
+				<div class="section-title"><?php echo $title; ?></div>
 				<div class="section-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<?php
+                        echo $content;
+                    ?>
 				</div>
 			</div>
 		</div>
@@ -81,7 +94,7 @@
 					<span id="age-rating">14+</span>
 				</div>
 				<div>
-					<p>Фестиваль «Пониребрик»<br/>1 апреля 2017<br/><a href="rules.html">Ознакомьтесь с правилами</a></p>
+					<p>Фестиваль «Пониребрик»<br/>1 апреля 2017<br/><a href="rules.php">Ознакомьтесь с правилами</a></p>
 				</div>
 				<div id="contacts">
 					<a href="https://vk.com/ponirebrik">
@@ -98,3 +111,6 @@
 		</div>
 	</body>
 </html>
+<?php
+	}
+?>

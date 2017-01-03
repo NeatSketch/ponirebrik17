@@ -50,7 +50,7 @@ a:active {
 	left: 0;
 	top: 100%;
 	z-index: 9999;
-	background: rgba(26, 60, 112, .7);
+	background: rgba(26, 60, 112, .85);
 	/*text-align: left;*/
 }
 .parallax {
@@ -64,6 +64,7 @@ a:active {
 	position: relative;
 	box-shadow: 0pt 0pt 10pt 0pt rgba(0,0,0,0.5);
 	background-image: url("../img/Background-Piter-200px.png");
+	/*background: rgba(26, 60, 112, .7);*/
 }
 #logo {
 	width: 100%;
@@ -131,14 +132,31 @@ a:active {
 	width: 100%;
 	display: inline-block;
 }
+#links {
+	display: inline-block;
+	text-align: left;
+}
+.faq-section {
+	display: inline-block;
+	text-align: left;
+}
 #content {
 	text-align: center;
+}
+#content a {
+	color: #1a3c70;
+}
+#content a:visited {
+	color: #1a3c70;
+}
+#content a:active {
+	color: #000;
 }
 #content > div {
 	background-color: #fff;
 	border-radius: 2pt;
 	padding: 14pt;
-	max-width: 466pt;
+	max-width: 680pt;
 	margin-left: auto;
 	margin-right: auto;
 }
