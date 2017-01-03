@@ -209,6 +209,8 @@ a:active {
 }
 .section-title {
 	/*margin-top: 40pt;*/
+	font-weight: normal;
+	margin-top: 10pt;
 	margin-bottom: 20pt;
 	font-size: 46pt;
 	font-size: 10vw;

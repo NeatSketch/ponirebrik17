@@ -78,7 +78,7 @@
 		</div>
 		<div id="content" class="overlapping">
 			<div>
-				<div class="section-title"><?php echo $title; ?></div>
+				<h1 class="section-title"><?php echo $title; ?></h1>
 				<div class="section-content">
 					<?php
                         echo $content;
@@ -102,9 +102,9 @@
 						<span>/ponirebrik</span>
 					</a>
 					<br />
-					<a href="mailto:ponirebrik@gmail.com">
+					<a href="mailto:mail@ponirebrik.ru">
 						<img src="./img/email_icon.png" alt="Электронная почта" />
-						<span>ponirebrik@gmail.com</span>
+						<span>mail@ponirebrik.ru</span>
 					</a>
 				</div>
 			</div>
