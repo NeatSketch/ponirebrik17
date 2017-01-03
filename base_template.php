@@ -8,6 +8,11 @@
 		}
     	$document_name = basename($filename, '.php');
     	$content = file_get_contents("./content/$document_name.html");
+
+		$time = time();
+		$user_agent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : 'unknown';
+		$log_entry = "$time -- $document_name -- $user_agent\n";
+		file_put_contents('./logs/site-access.txt', $log_entry, FILE_APPEND);
 ?>
 <!DOCTYPE html>
 <html>
