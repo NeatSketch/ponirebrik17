@@ -50,7 +50,7 @@ a:active {
 	left: 0;
 	top: 100%;
 	z-index: 9999;
-	background: rgba(26, 60, 112, .85);
+	background: rgba(86, 132, 191, .85); /*rgba(26, 60, 112, .85);*/
 	text-align: left;
 }
 .parallax {
@@ -109,7 +109,7 @@ a:active {
 }
 #title-bar > div > div:hover > a, .dropdown a:hover {
 	color: #fff;
-	background: #1a3c70;
+	background: #5684bf;
 }
 #title-bar > div > div > a:active, .dropdown a:active {
 	color: #fff;
