@@ -1,4 +1,22 @@
 <?php
+	session_start();
+
+	function get_referer() {
+		if (isset($_SERVER['HTTP_REFERER'])) {
+			$ref = $_SERVER['HTTP_REFERER'];
+			if ( !isset( $_SESSION["origURL"] ) )
+    			$_SESSION["origURL"] = $ref;
+			return $ref;
+		}
+		return '';
+	}
+
+	function get_orig_referer() {
+		if (isset($_SESSION["origURL"]))
+			return $_SESSION["origURL"];
+		return '';
+	}
+
 	function page($filename, $title = null) {
 		if (!isset($title)) {
 			$title = 'Пониребрик';
@@ -11,7 +29,10 @@
 
 		$time = time();
 		$user_agent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : 'unknown';
-		$log_entry = "$time -- $document_name -- $user_agent\n";
+		$ip_address = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
+		$referer = get_referer();
+		$orig_referer = get_orig_referer();
+		$log_entry = "$time -- $document_name -- $user_agent -- $ip_address -- $referer -- $orig_referer\n";
 		file_put_contents("./logs/site-access.txt", $log_entry, FILE_APPEND | LOCK_EX);
 ?>
 <!DOCTYPE html>
