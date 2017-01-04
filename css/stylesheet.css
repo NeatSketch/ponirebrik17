@@ -22,7 +22,7 @@ body {
 	color: #fff;
 	overflow-x: hidden;
 
-	background-color: #6e94c4; /*#1a3c70;*/
+	background-color: #5684bf; /*#1a3c70;*/
 	/*background-image: url("../img/Rain.jpg");
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
@@ -51,7 +51,7 @@ a:active {
 	top: 100%;
 	z-index: 9999;
 	background: rgba(26, 60, 112, .85);
-	/*text-align: left;*/
+	text-align: left;
 }
 .parallax {
 	background-position: 50% 50%;
@@ -410,10 +410,10 @@ a:active {
 		display: block;
 	}
 	body {
-		background-attachment: fixed;
+		/*background-attachment: fixed;*/
 	}
 	.parallax {
-		background-attachment: fixed;
+		/*background-attachment: fixed;*/
 	}
 	.section-title {
 		font-size: 46pt;
