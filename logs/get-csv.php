@@ -3,6 +3,7 @@
     $lines = explode("\n", $raw_data);
     foreach ($lines as $line) {
         $line_values = explode(' -- ', $line);
+        $line_values[] = '';
         echo implode(',', array_map(map_value, $line_values)) . "\n";
     }
 
