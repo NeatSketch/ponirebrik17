@@ -15,14 +15,14 @@
     src: url('../res/Ubuntu-Regular.ttf');
 }
 body {
-	font-family: ubuntucondensed, ubuntucondensedlatin, sans-serif;
+	font-family: ubuntu, sans-serif;
 	font-size: 14pt;
 	padding: 0;
 	margin: 0;
 	color: #fff;
 	overflow-x: hidden;
 
-	background-color: #1a3c70;
+	background-color: #6e94c4; /*#1a3c70;*/
 	/*background-image: url("../img/Rain.jpg");
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
@@ -63,7 +63,7 @@ a:active {
 .overlapping {
 	position: relative;
 	box-shadow: 0pt 0pt 10pt 0pt rgba(0,0,0,0.5);
-	background-image: url("../img/Background-Piter-200px.png");
+	background-image: url("../img/Background-Triangles.png");
 	/*background: rgba(26, 60, 112, .7);*/
 }
 #logo {
@@ -81,6 +81,7 @@ a:active {
 	display: inline-block;
 }
 #title-bar {
+	font-family: ubuntucondensed, ubuntucondensedlatin, sans-serif;
 	padding-top: 0;
 	padding-bottom: 0;
 	padding-left: 7pt;
@@ -113,6 +114,9 @@ a:active {
 #title-bar > div > div > a:active, .dropdown a:active {
 	color: #fff;
 	background: #000;
+}
+#title-bar a {
+	text-decoration: none;
 }
 .dropdown a {
 	display: block;
@@ -155,6 +159,7 @@ a:active {
 #content > div {
 	background-color: #fff;
 	border-radius: 2pt;
+	box-shadow: 0 0 5pt 0 rgba(0,0,0,0.75);
 	padding: 14pt;
 	max-width: 680pt;
 	margin-left: auto;
@@ -366,6 +371,7 @@ a:active {
 }
 #footer {
 	/*background-image: url("../img/Rain.jpg");*/
+	font-family: ubuntucondensed, ubuntucondensedlatin, sans-serif;
 	padding: 0;
 	padding-bottom: 14pt;
 }
