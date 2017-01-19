@@ -3,6 +3,10 @@
     src: url('../res/hagin_caps_medium.ttf');
 }
 @font-face {
+    font-family: pt;
+    src: url('../res/PTZ55F_W.ttf');
+}
+@font-face {
     font-family: ubuntucondensed;
     src: url('../res/ubuntu-condensed.woff2');
 }
@@ -47,7 +51,8 @@ a:active {
 .dropdown {
 	display: none;
 	position: absolute;
-	left: 0;
+	right: 0;
+	min-width: 100%;
 	top: 100%;
 	z-index: 9999;
 	background: rgba(86, 132, 191, .85); /*rgba(26, 60, 112, .85);*/
@@ -122,6 +127,14 @@ a:active {
 	display: block;
 	white-space: nowrap;
 }
+.lang-select-flag {
+	height: 10pt;
+	box-shadow: 0 0 5pt 0 rgba(0,0,0,0.4);
+}
+#lang-select-arrow {
+	font-size: 6pt;
+	vertical-align: middle;
+}
 #header {
 	/*padding-top: 20pt;*/
 	/*padding-bottom: 20pt;*/
@@ -139,6 +152,16 @@ a:active {
 #links {
 	display: inline-block;
 	text-align: left;
+}
+#lang-links {
+	display: inline-block;
+	text-align: left;
+}
+#lang-links a {
+	text-decoration: none;
+}
+#lang-links a span {
+	text-decoration: underline;
 }
 .faq-section {
 	display: inline-block;
@@ -235,8 +258,11 @@ a:active {
 	margin-bottom: 20pt;
 	font-size: 46pt;
 	font-size: 10vw;
-	font-family: hagin, sans-serif;
+	font-family: hagin, serif;
 	color: #1a3c70;
+}
+.section-title.altfont {
+	font-family: pt, serif;
 }
 .section-content {
 	margin-top: 20pt;

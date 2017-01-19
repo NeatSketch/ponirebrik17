@@ -1,5 +1,62 @@
 <?php
+	$localized_strings = array(
+		'ru' => array(
+			'ponirebrik' => 'Пониребрик',
+			'stands-reg' => 'Регистрация стендов',
+
+		),
+		/*'en' => array(
+			'ponirebrik' => 'Ponirebrik'
+		),*/
+		'cs' => array(
+			'ponirebrik' => 'Ponirebrik',
+			'stands-reg' => 'Registrace stánků',
+
+		)
+	);
+
+	$default_language = 'ru';
+
 	session_start();
+
+	function get_lang_code() {
+		global $localized_strings;
+
+		if (isset($_GET['lang']) && isset($localized_strings[$_GET['lang']])) {
+			return $_GET['lang'];
+		}
+
+		if (isset($_COOKIE['lang_code']) && isset($localized_strings[$_COOKIE['lang_code']])) {
+			return $_COOKIE['lang_code'];
+		}
+
+		$available_languages = array_keys($localized_strings);
+
+		return prefered_language($available_languages, $_SERVER["HTTP_ACCEPT_LANGUAGE"]);
+	}
+
+	function prefered_language(array $available_languages, $http_accept_language) {
+		global $default_language;
+		$available_languages = array_flip($available_languages);
+		$langs;
+		preg_match_all('~([\w-]+)(?:[^,\d]+([\d.]+))?~', strtolower($http_accept_language), $matches, PREG_SET_ORDER);
+		foreach($matches as $match) {
+			list($a, $b) = explode('-', $match[1]) + array('', '');
+			$value = isset($match[2]) ? (float) $match[2] : 1.0;
+			if(isset($available_languages[$match[1]])) {
+				$langs[$match[1]] = $value;
+				continue;
+			}
+			if(isset($available_languages[$a])) {
+				$langs[$a] = $value - 0.1;
+			}
+		}
+		if($langs) {
+			arsort($langs);
+			return key($langs);
+		}
+		return $default_language;
+	}
 
 	function get_referer() {
 		if (isset($_SERVER['HTTP_REFERER'])) {
@@ -17,22 +74,37 @@
 		return '';
 	}
 
-	function page($filename, $title = null) {
+	function page($filename, $title = null, $raw_title = null, $content = null) {
+		global $localized_strings;
+		global $redirect_to;
+
+		$lang_code = get_lang_code();
+		setcookie('lang_code', $lang_code, time() + 60*60*24*60);
+
 		if (!isset($title)) {
-			$title = 'Пониребрик';
+			$title = $localized_strings[$lang_code]['ponirebrik'];
 			$head_title = $title;
 		} else {
-			$head_title = "Пониребрик — $title";
+			$title = $localized_strings[$lang_code][$title];
+			$head_title = "{$localized_strings[$lang_code]['ponirebrik']} — $title";
 		}
+
+		if (isset($raw_title)) {
+			$title = $raw_title;
+			$head_title = $raw_title;
+		}
+
     	$document_name = basename($filename, '.php');
-    	$content = file_get_contents("./content/$document_name.html");
+		if (!isset($content)) {
+    		$content = file_get_contents("./content/$lang_code/$document_name.html");
+		}
 
 		$time = time();
 		$user_agent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : 'unknown';
 		$ip_address = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
 		$referer = get_referer();
 		$orig_referer = get_orig_referer();
-		$log_entry = "$time -- $document_name -- $user_agent -- $ip_address -- $referer -- $orig_referer\n";
+		$log_entry = "$time -- $document_name -- $user_agent -- $ip_address -- $referer -- $orig_referer -- $lang_code\n";
 		file_put_contents("./logs/site-access.txt", $log_entry, FILE_APPEND | LOCK_EX);
 ?>
 <!DOCTYPE html>
@@ -73,6 +145,15 @@
 			<a href="index.php"><img id="logo-text" src="./img/Logo-text.png" alt="Лого" /></a>
 			<div id="title-bar">
 				<div>
+					<div>
+						<a href="select-language.php?redir=<?php echo $document_name; ?>"><img class="lang-select-flag" src="./img/flag-<?php echo $lang_code; ?>.png" /> <?php echo strtoupper($lang_code); ?> <span id="lang-select-arrow">▼</span></a>
+						<div class="dropdown">
+							<a href="select-language.php?lang=ru&redir=<?php echo $document_name; ?>"><img class="lang-select-flag" src="./img/flag-ru.png" /> RU</a>
+							<a href="select-language.php?lang=cs&redir=<?php echo $document_name; ?>"><img class="lang-select-flag" src="./img/flag-cs.png" /> CS</a>
+						</div>
+					</div>
+				</div>
+				<div>
 					<div><a href="index.php">Главная</a></div>
 					<div>
 						<a href="about.php">О мероприятии</a>
@@ -104,7 +185,7 @@
 		</div>
 		<div id="content" class="overlapping">
 			<div>
-				<h1 class="section-title"><?php echo $title; ?></h1>
+				<h1 class="section-title<?php if ($lang_code == 'cs') echo ' altfont'; ?>"><?php echo $title; ?></h1>
 				<div class="section-content">
 					<?php
                         echo $content;
