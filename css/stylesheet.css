@@ -157,6 +157,10 @@ a:active {
 	display: inline-block;
 	text-align: left;
 }
+#lang-links li {
+	padding-top: 2pt;
+	padding-bottom: 2pt;
+}
 #lang-links a {
 	text-decoration: none;
 }

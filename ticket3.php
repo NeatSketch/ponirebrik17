@@ -1,4 +1,4 @@
 <?php
 	require_once('base_template.php');
-	page(__FILE__, 'Билет «Капитан Бедлам»');
+	page(__FILE__, 'ticket3');
 ?>

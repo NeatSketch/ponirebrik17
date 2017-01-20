@@ -1,4 +1,4 @@
 <?php
 	require_once('base_template.php');
-	page(__FILE__, 'Билеты');
+	page(__FILE__, 'tickets');
 ?>

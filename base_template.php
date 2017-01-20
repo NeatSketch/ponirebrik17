@@ -2,16 +2,58 @@
 	$localized_strings = array(
 		'ru' => array(
 			'ponirebrik' => 'Пониребрик',
+			'main-page' => 'Главная',
+			'about' => 'О мероприятии',
+			'faq-menu' => 'FAQ',
+			'faq-tooltip' => 'FAQ — часто задаваемые вопросы',
+			'faq' => 'Часто задаваемые вопросы',
+			'rules' => 'Правила',
+			'tickets' => 'Билеты',
+			'ticket1' => 'Билет «Рядовой Путаница»',
+			'ticket2' => 'Билет «Лейтенант Бардак»',
+			'ticket3' => 'Билет «Капитан Бедлам»',
+			'ticket4' => 'Билет «Генерал Переворот»',
+			'reg' => 'Регистрация',
+			'stands' => 'Стенды',
+			'cosplay' => 'Косплей',
+			'singing-contest' => 'Вокальный конкурс',
+			'press' => 'Пресса',
 			'stands-reg' => 'Регистрация стендов',
-
+			'cosplay-reg' => 'Регистрация косплееров',
+			'singing-contest-reg' => 'Регистрация на вокальный конкурс',
+			'press-reg' => 'Регистрация прессы',
+			'footer-title' => 'Фестиваль «Пониребрик»',
+			'footer-date' => '1 апреля 2017',
+			'footer-rules' => 'Ознакомьтесь с правилами'
 		),
 		/*'en' => array(
 			'ponirebrik' => 'Ponirebrik'
 		),*/
 		'cs' => array(
 			'ponirebrik' => 'Ponirebrik',
+			'main-page' => 'Domů',
+			'about' => 'O události',
+			'faq-menu' => 'FAQ',
+			'faq-tooltip' => 'FAQ — Často kladené dotazy',
+			'faq' => 'Často kladené dotazy',
+			'rules' => 'Pravidla',
+			'tickets' => 'Vstupenky',
+			'ticket1' => 'Vstupenka "Voják Zmatek"',
+			'ticket2' => 'Vstupenka "Lt. Bordel"',
+			'ticket3' => 'Vstupenka "Kapitán Blázinec"',
+			'ticket4' => 'Vstupenka "General Převrat"',
+			'reg' => 'Registrace',
+			'stands' => 'Stánky',
+			'cosplay' => 'Cosplay',
+			'singing-contest' => 'Vokální soutěž',
+			'press' => 'Média',
 			'stands-reg' => 'Registrace stánků',
-
+			'cosplay-reg' => 'Registrace cosplayerů',
+			'singing-contest-reg' => 'Registrace účastníků pěvecké soutěže',
+			'press-reg' => 'Registrace zátupců médií',
+			'footer-title' => 'Festival Ponirebrik',
+			'footer-date' => '1.dubna 2017',
+			'footer-rules' => 'Podívejte se na pravidla'
 		)
 	);
 
@@ -154,30 +196,30 @@
 					</div>
 				</div>
 				<div>
-					<div><a href="index.php">Главная</a></div>
+					<div><a href="index.php"><?php echo $localized_strings[$lang_code]['main-page']; ?></a></div>
 					<div>
-						<a href="about.php">О мероприятии</a>
+						<a href="about.php"><?php echo $localized_strings[$lang_code]['about']; ?></a>
 						<div class="dropdown">
-							<a href="faq.php" title="FAQ — часто задаваемые вопросы">FAQ</a>
-							<a href="rules.php">Правила</a>
+							<a href="faq.php" title="<?php echo $localized_strings[$lang_code]['faq-tooltip']; ?>"><?php echo $localized_strings[$lang_code]['faq-menu']; ?></a>
+							<a href="rules.php"><?php echo $localized_strings[$lang_code]['rules']; ?></a>
 						</div>
 					</div>
 					<div>
-						<a href="tickets.php">Билеты</a>
+						<a href="tickets.php"><?php echo $localized_strings[$lang_code]['tickets']; ?></a>
 						<div class="dropdown">
-							<a href="ticket1.php">Билет «Рядовой Путаница»</a>
-							<a href="ticket2.php">Билет «Лейтенант Бардак»</a>
-							<a href="ticket3.php">Билет «Капитан Бедлам»</a>
-							<a href="ticket4.php">Билет «Генерал Переворот»</a>
+							<a href="ticket1.php"><?php echo $localized_strings[$lang_code]['ticket1']; ?></a>
+							<a href="ticket2.php"><?php echo $localized_strings[$lang_code]['ticket2']; ?></a>
+							<a href="ticket3.php"><?php echo $localized_strings[$lang_code]['ticket3']; ?></a>
+							<a href="ticket4.php"><?php echo $localized_strings[$lang_code]['ticket4']; ?></a>
 						</div>
 					</div>
 					<div>
-						<a href="reg.php">Регистрация</a>
+						<a href="reg.php"><?php echo $localized_strings[$lang_code]['reg']; ?></a>
 						<div class="dropdown">
-							<a href="stands-reg.php">Стенды</a>
-							<a href="cosplay-reg.php">Косплей</a>
-							<a href="singing-contest-reg.php">Вокальный конкурс</a>
-							<a href="press-reg.php">Пресса</a>
+							<a href="stands-reg.php"><?php echo $localized_strings[$lang_code]['stands']; ?></a>
+							<a href="cosplay-reg.php"><?php echo $localized_strings[$lang_code]['cosplay']; ?></a>
+							<a href="singing-contest-reg.php"><?php echo $localized_strings[$lang_code]['singing-contest']; ?></a>
+							<a href="press-reg.php"><?php echo $localized_strings[$lang_code]['press']; ?></a>
 						</div>
 					</div>
 				</div>
@@ -201,7 +243,7 @@
 					<span id="age-rating">14+</span>
 				</div>
 				<div>
-					<p>Фестиваль «Пониребрик»<br/>1 апреля 2017<br/><a href="rules.php">Ознакомьтесь с правилами</a></p>
+					<p><?php echo $localized_strings[$lang_code]['footer-title']; ?><br/><?php echo $localized_strings[$lang_code]['footer-date']; ?><br/><a href="rules.php"><?php echo $localized_strings[$lang_code]['footer-rules']; ?></a></p>
 				</div>
 				<div id="contacts">
 					<a href="https://vk.com/ponirebrik">
