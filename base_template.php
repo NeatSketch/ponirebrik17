@@ -177,7 +177,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
+		<link href="css/stylesheet.css?1" rel="stylesheet" type="text/css" />
 		<link rel="apple-touch-icon" sizes="57x57" href="/res/apple-icon-57x57.png" />
 		<link rel="apple-touch-icon" sizes="60x60" href="/res/apple-icon-60x60.png" />
 		<link rel="apple-touch-icon" sizes="72x72" href="/res/apple-icon-72x72.png" />
