@@ -26,9 +26,32 @@
 			'footer-date' => '1 апреля 2017',
 			'footer-rules' => 'Ознакомьтесь с правилами'
 		),
-		/*'en' => array(
-			'ponirebrik' => 'Ponirebrik'
-		),*/
+		'en' => array(
+			'ponirebrik' => 'Ponirebrik',
+			'main-page' => 'Home',
+			'about' => 'About',
+			'faq-menu' => 'FAQ',
+			'faq-tooltip' => 'Frequently Asked Questions',
+			'faq' => 'Frequently Asked Questions',
+			'rules' => 'Rules',
+			'tickets' => 'Tickets',
+			'ticket1' => 'Private Havoc\'s Ticket',
+			'ticket2' => 'Lieutenant Shambles\' Ticket',
+			'ticket3' => 'Captain Bedlam\'s Ticket',
+			'ticket4' => 'General Meltdown\'s Ticket',
+			'reg' => 'Registration',
+			'stands' => 'Booths',
+			'cosplay' => 'Cosplay',
+			'singing-contest' => 'Singing Competition',
+			'press' => 'Media',
+			'stands-reg' => 'Booth registration',
+			'cosplay-reg' => 'Cosplay registration',
+			'singing-contest-reg' => 'Singing contest registration',
+			'press-reg' => 'Media registration',
+			'footer-title' => 'Ponirebrik Convention',
+			'footer-date' => 'April 1, 2017',
+			'footer-rules' => 'Rules of the Convention'
+		),
 		'cs' => array(
 			'ponirebrik' => 'Ponirebrik',
 			'main-page' => 'Domů',
@@ -191,6 +214,7 @@
 						<a href="select-language.php?redir=<?php echo $document_name; ?>"><img class="lang-select-flag" src="./img/flag-<?php echo $lang_code; ?>.png" /> <?php echo strtoupper($lang_code); ?> <span id="lang-select-arrow">▼</span></a>
 						<div class="dropdown">
 							<a href="select-language.php?lang=ru&redir=<?php echo $document_name; ?>"><img class="lang-select-flag" src="./img/flag-ru.png" /> RU</a>
+							<a href="select-language.php?lang=en&redir=<?php echo $document_name; ?>"><img class="lang-select-flag" src="./img/flag-en.png" /> EN</a>
 							<a href="select-language.php?lang=cs&redir=<?php echo $document_name; ?>"><img class="lang-select-flag" src="./img/flag-cs.png" /> CS</a>
 						</div>
 					</div>
