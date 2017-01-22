@@ -451,6 +451,12 @@ a:active {
 	padding: 14pt;
 	padding-bottom: 0;
 }
+#footer-addition {
+	padding-top: 8pt;
+}
+#footer-addition > div {
+	text-align: center !important;
+}
 @media (min-width: 480pt) {
 	*:hover > .dropdown {
 		display: block;
