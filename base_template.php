@@ -210,16 +210,6 @@
 			<a href="index.php"><img id="logo-text" src="./img/Logo-text.png" alt="Лого" /></a>
 			<div id="title-bar">
 				<div>
-					<div>
-						<a href="select-language.php?redir=<?php echo $document_name; ?>"><img class="lang-select-flag" src="./img/flag-<?php echo $lang_code; ?>.png" /> <?php echo strtoupper($lang_code); ?> <span id="lang-select-arrow">▼</span></a>
-						<div class="dropdown">
-							<a href="select-language.php?lang=ru&redir=<?php echo $document_name; ?>"><img class="lang-select-flag" src="./img/flag-ru.png" /> RU</a>
-							<a href="select-language.php?lang=en&redir=<?php echo $document_name; ?>"><img class="lang-select-flag" src="./img/flag-en.png" /> EN</a>
-							<a href="select-language.php?lang=cs&redir=<?php echo $document_name; ?>"><img class="lang-select-flag" src="./img/flag-cs.png" /> CS</a>
-						</div>
-					</div>
-				</div>
-				<div>
 					<div><a href="index.php"><?php echo $localized_strings[$lang_code]['main-page']; ?></a></div>
 					<div>
 						<a href="about.php"><?php echo $localized_strings[$lang_code]['about']; ?></a>
@@ -244,6 +234,16 @@
 							<a href="cosplay-reg.php"><?php echo $localized_strings[$lang_code]['cosplay']; ?></a>
 							<a href="singing-contest-reg.php"><?php echo $localized_strings[$lang_code]['singing-contest']; ?></a>
 							<a href="press-reg.php"><?php echo $localized_strings[$lang_code]['press']; ?></a>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div>
+						<a href="select-language.php?redir=<?php echo $document_name; ?>"><img class="lang-select-flag" src="./img/flag-<?php echo $lang_code; ?>.png" /> <?php echo strtoupper($lang_code); ?> <span id="lang-select-arrow">▼</span></a>
+						<div class="dropdown">
+							<a href="select-language.php?lang=ru&redir=<?php echo $document_name; ?>"><img class="lang-select-flag" src="./img/flag-ru.png" /> RU</a>
+							<a href="select-language.php?lang=en&redir=<?php echo $document_name; ?>"><img class="lang-select-flag" src="./img/flag-en.png" /> EN</a>
+							<a href="select-language.php?lang=cs&redir=<?php echo $document_name; ?>"><img class="lang-select-flag" src="./img/flag-cs.png" /> CS</a>
 						</div>
 					</div>
 				</div>
