@@ -12,7 +12,7 @@
 
     $redirect_to = $_GET['redir'];
     $requested_lang_code = $_GET['lang'];
-    if (!isset($redirect_to) || !preg_match('/^[a-z\\-]+$/', $redirect_to)) {
+    if (!isset($redirect_to) || !preg_match('/^[a-z\\-\d]+$/', $redirect_to)) {
         $redirect_to = 'index';
     }
     if (isset($requested_lang_code) && isset($localized_strings[$requested_lang_code])) {
