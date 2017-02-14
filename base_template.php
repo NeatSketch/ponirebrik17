@@ -24,7 +24,9 @@
 			'press-reg' => 'Регистрация прессы',
 			'footer-title' => 'Фестиваль «Пониребрик»',
 			'footer-date' => '1 апреля 2017',
-			'footer-rules' => 'Ознакомьтесь с правилами'
+			'footer-rules' => 'Ознакомьтесь с правилами',
+			'volunteers' => 'Волонтёры',
+			'volunteers-reg' => 'Регистрация волонтеров'
 		),
 		'en' => array(
 			'ponirebrik' => 'Ponirebrik',
@@ -139,11 +141,15 @@
 		return '';
 	}
 
-	function page($filename, $title = null, $raw_title = null, $content = null) {
+	function page($filename, $title = null, $raw_title = null, $content = null, $force_lang_code = null) {
 		global $localized_strings;
 		global $redirect_to;
 
-		$lang_code = get_lang_code();
+		if (isset($force_lang_code)) {
+			$lang_code = $force_lang_code;
+		} else {
+			$lang_code = get_lang_code();
+		}
 		setcookie('lang_code', $lang_code, time() + 60*60*24*60);
 
 		if (!isset($title)) {
@@ -234,16 +240,27 @@
 							<a href="cosplay-reg.php"><?php echo $localized_strings[$lang_code]['cosplay']; ?></a>
 							<a href="singing-contest-reg.php"><?php echo $localized_strings[$lang_code]['singing-contest']; ?></a>
 							<a href="press-reg.php"><?php echo $localized_strings[$lang_code]['press']; ?></a>
+							<?php
+								if ($lang_code == 'ru')
+									echo "<a href=\"volunteers-reg.php\">{$localized_strings[$lang_code]['volunteers']}</a>\n";
+							?>
 						</div>
 					</div>
 				</div>
 				<div>
 					<div>
-						<a href="select-language.php?redir=<?php echo $document_name; ?>"><img class="lang-select-flag" src="./img/flag-<?php echo $lang_code; ?>.png" /> <?php echo strtoupper($lang_code); ?> <span id="lang-select-arrow">▼</span></a>
+						<?php
+							if (isset($force_lang_code)) {
+								$redir_document_name = 'index';
+							} else {
+								$redir_document_name = $document_name;
+							}
+						?>
+						<a href="select-language.php?redir=<?php echo $redir_document_name; ?>"><img class="lang-select-flag" src="./img/flag-<?php echo $lang_code; ?>.png" /> <?php echo strtoupper($lang_code); ?> <span id="lang-select-arrow">▼</span></a>
 						<div class="dropdown">
-							<a href="select-language.php?lang=ru&redir=<?php echo $document_name; ?>"><img class="lang-select-flag" src="./img/flag-ru.png" /> RU</a>
-							<a href="select-language.php?lang=en&redir=<?php echo $document_name; ?>"><img class="lang-select-flag" src="./img/flag-en.png" /> EN</a>
-							<a href="select-language.php?lang=cs&redir=<?php echo $document_name; ?>"><img class="lang-select-flag" src="./img/flag-cs.png" /> CS</a>
+							<a href="select-language.php?lang=ru&redir=<?php echo $redir_document_name; ?>"><img class="lang-select-flag" src="./img/flag-ru.png" /> RU</a>
+							<a href="select-language.php?lang=en&redir=<?php echo $redir_document_name; ?>"><img class="lang-select-flag" src="./img/flag-en.png" /> EN</a>
+							<a href="select-language.php?lang=cs&redir=<?php echo $redir_document_name; ?>"><img class="lang-select-flag" src="./img/flag-cs.png" /> CS</a>
 						</div>
 					</div>
 				</div>
