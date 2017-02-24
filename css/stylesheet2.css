@@ -1,0 +1,205 @@
+@font-face {
+    font-family: jeff;
+    src: url('../res/v_CCJeffCampbell.ttf');
+}
+body {
+    margin: 0;
+}
+#background-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-image: url('../img/Background_left.png');
+    background-position-x: left;
+    background-repeat: repeat-y;
+    background-size: 150pt auto;
+    z-index: 1;
+}
+#background-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-image: url('../img/Background_right.png');
+    background-position-x: right;
+    background-repeat: repeat-y;
+    background-size: 150pt auto;
+    z-index: 2;
+}
+#page-content {
+    position: relative;
+    max-width: 540pt;
+    height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+    z-index: 3;
+    padding-left: 14pt;
+    padding-right: 14pt;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 16pt 16pt rgba(255, 255, 255, 0.7);
+}
+#logo {
+    max-width: 510pt;
+}
+#timer {
+    display: none;
+    position: absolute;
+    right: 14pt;
+    top: -10pt;
+    width: 150pt;
+    height: 150pt;
+    z-index: 4;
+    text-align: center;
+    background-image: url('../img/timer.svg');
+    background-repeat: no-repeat;
+    background-position-x: -20pt;
+    background-position-y: -5pt;
+    background-size: 130%;
+}
+#timer > div {
+    position: absolute;
+    font-family: jeff;
+    font-size: 8pt;
+    left: 48pt;
+    right: 20pt;
+    top: 65pt;
+}
+#timer-value-1, #timer-value-2 {
+    font-weight: bold;
+}
+@media (min-width: 280pt) {
+    #logo {
+        margin-top: -15pt;
+    }
+}
+@media (min-width: 540pt) {
+    #logo {
+        margin-top: -24pt;
+    } 
+}
+@media (min-width: 780pt) {
+    #timer {
+        display: block;
+    }
+}
+@media (min-width: 860pt) {
+    #timer {
+        right: 5%;
+    }
+}
+#menu {
+    display: inline-block;
+    font-family: jeff;
+    font-size: 14pt;
+}
+#menu > div {
+    display: inline-block;
+    position: relative;
+}
+#menu > div > div {
+    text-align: left;
+    font-size: 12pt;
+}
+#menu > div > div > a {
+    display: block;
+    margin-left: 10pt;
+    margin-top: 5pt;
+    margin-bottom: 8pt;
+    color: #000;
+    text-decoration: none;
+}
+#menu > div > div > a:visited {
+    color: #000;
+}
+#menu > div > div > a:active {
+    color: #000;
+}
+#menu > div > a {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+    margin-left: 10pt;
+    margin-right: 10pt;
+    padding-top: 19pt;
+    padding-bottom: 25pt;
+    padding-left: 6pt;
+    padding-right: 6pt;
+}
+#menu > div > a:visited {
+    color: #000;
+}
+#menu > div > a:active {
+    color: #000;
+}
+#menu > div > div {
+    display: none;
+    position: absolute;
+}
+#menu-1 > a {
+    background-image: url('../img/buttons/menu_pony_01.png');
+}
+#menu-2 > a {
+    background-image: url('../img/buttons/menu_pony_02.png');
+    z-index: 9;
+}
+#menu-3 > a {
+    background-image: url('../img/buttons/menu_pony_03.png');
+    z-index: 11;
+}
+#menu-4 > a {
+    background-image: url('../img/buttons/menu_pony_04.png');
+}
+#menu-1:hover > a {
+    background-image: url('../img/buttons/menu_pony_01_hover.png');
+}
+#menu-2:hover > a {
+    background-image: url('../img/buttons/menu_pony_02_hover.png');
+}
+#menu-3:hover > a {
+    background-image: url('../img/buttons/menu_pony_03_hover.png');
+}
+#menu-4:hover > a {
+    background-image: url('../img/buttons/menu_pony_04_hover.png');
+}
+#menu-2:hover > div {
+    display: block;
+    background-image: url('../img/menu/menu-21.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    top: 20pt;
+    left: 7pt;
+    width: 80pt;
+    z-index: 12;
+}
+#menu-3:hover > div {
+    display: block;
+    background-image: url('../img/menu/menu-22.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    top: 14pt;
+    left: 0pt;
+    width: 222pt;
+    padding-top: 6pt;
+    padding-left: 6pt;
+    padding-bottom: 8pt;
+    z-index: 10;
+}
+#menu-4:hover > div {
+    display: block;
+    background-image: url('../img/menu/menu-23.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    top: 18pt;
+    left: -2зеpt;
+    width: 200pt;
+    padding-top: 6pt;
+    padding-left: 8pt;
+    padding-bottom: 24pt;
+}

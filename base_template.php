@@ -183,7 +183,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link href="css/stylesheet.css?2" rel="stylesheet" type="text/css" />
+		<link href="css/stylesheet2.css" rel="stylesheet" type="text/css" />
 		<link rel="apple-touch-icon" sizes="57x57" href="/res/apple-icon-57x57.png" />
 		<link rel="apple-touch-icon" sizes="60x60" href="/res/apple-icon-60x60.png" />
 		<link rel="apple-touch-icon" sizes="72x72" href="/res/apple-icon-72x72.png" />
@@ -205,107 +205,111 @@
 		<!--<script type="text/javascript" src="//vk.com/js/api/openapi.js?120"></script>-->
 	</head>
 	<body>
-		<div id="header" class="parallax">
-			<!--<div id="header-main">
-				<div id="header-top">
-					<span id="age-rating">14+</span>
-					<span id="event-date"><strong>31</strong> января</span>
+		<div id="background-left"></div>
+        <div id="background-right"></div>
+        <div id="page-content">
+            <img id="logo" src="./img/Pony_top.svg" alt="Лого" />
+            <div id="menu">
+				<div id="menu-1">
+					<a href="index.php"><?php echo $localized_strings[$lang_code]['main-page']; ?></a>
 				</div>
-				<img id="logo" src="./img/Logo_resized_new.png" alt="Лого" />
-			</div>-->
-			<a href="index.php"><img id="logo-text" src="./img/Logo-text.png" alt="Лого" /></a>
-			<div id="title-bar">
-				<div>
-					<div><a href="index.php"><?php echo $localized_strings[$lang_code]['main-page']; ?></a></div>
+				<div id="menu-2">
+					<a href="about.php"><?php echo $localized_strings[$lang_code]['about']; ?></a>
 					<div>
-						<a href="about.php"><?php echo $localized_strings[$lang_code]['about']; ?></a>
-						<div class="dropdown">
-							<a href="faq.php" title="<?php echo $localized_strings[$lang_code]['faq-tooltip']; ?>"><?php echo $localized_strings[$lang_code]['faq-menu']; ?></a>
-							<a href="rules.php"><?php echo $localized_strings[$lang_code]['rules']; ?></a>
-						</div>
-					</div>
-					<div>
-						<a href="tickets.php"><?php echo $localized_strings[$lang_code]['tickets']; ?></a>
-						<div class="dropdown">
-							<a href="ticket1.php"><?php echo $localized_strings[$lang_code]['ticket1']; ?></a>
-							<a href="ticket2.php"><?php echo $localized_strings[$lang_code]['ticket2']; ?></a>
-							<a href="ticket3.php"><?php echo $localized_strings[$lang_code]['ticket3']; ?></a>
-							<a href="ticket4.php"><?php echo $localized_strings[$lang_code]['ticket4']; ?></a>
-						</div>
-					</div>
-					<div>
-						<a href="reg.php"><?php echo $localized_strings[$lang_code]['reg']; ?></a>
-						<div class="dropdown">
-							<a href="stands-reg.php"><?php echo $localized_strings[$lang_code]['stands']; ?></a>
-							<a href="cosplay-reg.php"><?php echo $localized_strings[$lang_code]['cosplay']; ?></a>
-							<a href="singing-contest-reg.php"><?php echo $localized_strings[$lang_code]['singing-contest']; ?></a>
-							<a href="press-reg.php"><?php echo $localized_strings[$lang_code]['press']; ?></a>
-							<?php
-								if ($lang_code == 'ru')
-									echo "<a href=\"volunteers-reg.php\">{$localized_strings[$lang_code]['volunteers']}</a>\n";
-							?>
-						</div>
+						<a href="rules.php"><?php echo $localized_strings[$lang_code]['rules']; ?></a>
+						<a href="faq.php" title="<?php echo $localized_strings[$lang_code]['faq-tooltip']; ?>"><?php echo $localized_strings[$lang_code]['faq-menu']; ?></a>
 					</div>
 				</div>
-				<div>
+				<div id="menu-3">
+					<a href="tickets.php"><?php echo $localized_strings[$lang_code]['tickets']; ?></a>
 					<div>
+						<a href="ticket1.php"><?php echo $localized_strings[$lang_code]['ticket1']; ?></a>
+						<a href="ticket2.php"><?php echo $localized_strings[$lang_code]['ticket2']; ?></a>
+						<a href="ticket3.php"><?php echo $localized_strings[$lang_code]['ticket3']; ?></a>
+						<a href="ticket4.php"><?php echo $localized_strings[$lang_code]['ticket4']; ?></a>
+					</div>
+				</div>
+				<div id="menu-4">
+					<a href="reg.php"><?php echo $localized_strings[$lang_code]['reg']; ?></a>
+					<div>
+						<a href="stands-reg.php"><?php echo $localized_strings[$lang_code]['stands']; ?></a>
+						<a href="cosplay-reg.php"><?php echo $localized_strings[$lang_code]['cosplay']; ?></a>
+						<a href="singing-contest-reg.php"><?php echo $localized_strings[$lang_code]['singing-contest']; ?></a>
+						<a href="press-reg.php"><?php echo $localized_strings[$lang_code]['press']; ?></a>
 						<?php
-							if (isset($force_lang_code)) {
-								$redir_document_name = 'index';
-							} else {
-								$redir_document_name = $document_name;
-							}
+							if ($lang_code == 'ru')
+								echo "<a href=\"volunteers-reg.php\">{$localized_strings[$lang_code]['volunteers']}</a>\n";
 						?>
-						<a href="select-language.php?redir=<?php echo $redir_document_name; ?>"><img class="lang-select-flag" src="./img/flag-<?php echo $lang_code; ?>.png" /> <?php echo strtoupper($lang_code); ?> <span id="lang-select-arrow">▼</span></a>
-						<div class="dropdown">
-							<a href="select-language.php?lang=ru&redir=<?php echo $redir_document_name; ?>"><img class="lang-select-flag" src="./img/flag-ru.png" /> RU</a>
-							<a href="select-language.php?lang=en&redir=<?php echo $redir_document_name; ?>"><img class="lang-select-flag" src="./img/flag-en.png" /> EN</a>
-							<a href="select-language.php?lang=cs&redir=<?php echo $redir_document_name; ?>"><img class="lang-select-flag" src="./img/flag-cs.png" /> CS</a>
-						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div id="content" class="overlapping">
-			<div>
-				<h1 class="section-title<?php if ($lang_code == 'cs') echo ' altfont'; ?>"><?php echo $title; ?></h1>
-				<div class="section-content">
+			
+			<!--<div>
+				<div>
 					<?php
-                        echo $content;
-                    ?>
+						if (isset($force_lang_code)) {
+							$redir_document_name = 'index';
+						} else {
+							$redir_document_name = $document_name;
+						}
+					?>
+					<a href="select-language.php?redir=<?php echo $redir_document_name; ?>"><img class="lang-select-flag" src="./img/flag-<?php echo $lang_code; ?>.png" /> <?php echo strtoupper($lang_code); ?> <span id="lang-select-arrow">▼</span></a>
+					<div class="dropdown">
+						<a href="select-language.php?lang=ru&redir=<?php echo $redir_document_name; ?>"><img class="lang-select-flag" src="./img/flag-ru.png" /> RU</a>
+						<a href="select-language.php?lang=en&redir=<?php echo $redir_document_name; ?>"><img class="lang-select-flag" src="./img/flag-en.png" /> EN</a>
+						<a href="select-language.php?lang=cs&redir=<?php echo $redir_document_name; ?>"><img class="lang-select-flag" src="./img/flag-cs.png" /> CS</a>
+					</div>
 				</div>
-			</div>
-		</div>
-		<div id="footer" class="parallax">
+			</div>-->
+		
+			<h1 class="section-title<?php if ($lang_code == 'cs') echo ' altfont'; ?>"><?php echo $title; ?></h1>
+			<?php
+				echo $content;
+			?>
+			<!--<div id="footer" class="parallax">
 <?php
 	if ($lang_code == 'en') {
 ?>
-			<div id="footer-addition">
-				<div>Website translation by <a href="http://darkcollaboration.deviantart.com/">Dark Room Collaboration</a></div>
-			</div>
+				<div id="footer-addition">
+					<div>Website translation by <a href="http://darkcollaboration.deviantart.com/">Dark Room Collaboration</a></div>
+				</div>
 <?php
 	}
 ?>
-			<div>
 				<div>
-					<span id="age-rating">14+</span>
+					<div>
+						<span id="age-rating">14+</span>
+					</div>
+					<div>
+						<p><?php echo $localized_strings[$lang_code]['footer-title']; ?><br/><?php echo $localized_strings[$lang_code]['footer-date']; ?><br/><a href="rules.php"><?php echo $localized_strings[$lang_code]['footer-rules']; ?></a></p>
+					</div>
+					<div id="contacts">
+						<a href="https://vk.com/ponirebrik">
+							<img src="./img/vk_icon.png" alt="Группа ВКонтакте" />
+							<span>/ponirebrik</span>
+						</a>
+						<br />
+						<a href="mailto:mail@ponirebrik.ru">
+							<img src="./img/email_icon.png" alt="Электронная почта" />
+							<span>mail@ponirebrik.ru</span>
+						</a>
+					</div>
 				</div>
-				<div>
-					<p><?php echo $localized_strings[$lang_code]['footer-title']; ?><br/><?php echo $localized_strings[$lang_code]['footer-date']; ?><br/><a href="rules.php"><?php echo $localized_strings[$lang_code]['footer-rules']; ?></a></p>
-				</div>
-				<div id="contacts">
-					<a href="https://vk.com/ponirebrik">
-						<img src="./img/vk_icon.png" alt="Группа ВКонтакте" />
-						<span>/ponirebrik</span>
-					</a>
-					<br />
-					<a href="mailto:mail@ponirebrik.ru">
-						<img src="./img/email_icon.png" alt="Электронная почта" />
-						<span>mail@ponirebrik.ru</span>
-					</a>
-				</div>
-			</div>
+			</div>-->
 		</div>
+		<div id="timer">
+				<div>
+					<span>До фестиваля</span>
+					<br />
+					<span>осталось</span>
+					<br />
+					<span>ровно</span>
+					<br />
+					<span id="timer-value-1">XX дней</span>
+					<br />
+					<span id="timer-value-2">00:00:00</span>
+				</div>
+        	</div>
 	</body>
 </html>
 <?php
