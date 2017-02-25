@@ -2,8 +2,19 @@
     font-family: jeff;
     src: url('../res/v_CCJeffCampbell.ttf');
 }
+@font-face {
+    font-family: candara;
+    src: url('../res/Candara.ttf');
+}
+html {
+    height: 100%;
+}
 body {
     margin: 0;
+    position: relative;
+    min-height: 100%;
+    font-family: candara;
+    font-size: 12pt;
 }
 #background-left {
     position: absolute;
@@ -42,8 +53,42 @@ body {
     background-color: rgba(255, 255, 255, 0.7);
     box-shadow: 0 0 16pt 16pt rgba(255, 255, 255, 0.7);
 }
+#lang-switch {
+    position: absolute;
+    top: 10pt;
+    right: 20pt;
+    background-image: url('../img/buttons/Pony_language_bg.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    width: 45pt;
+    height: 20pt;
+    z-index: 20;
+}
+#lang-switch img {
+    width: 45pt;
+}
+#lang-switch > div {
+    display: none;
+    position: absolute;
+    top: 22pt;
+    left: 0;
+}
+#lang-switch > div > a {
+    display: block;
+    width: 45pt;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+#lang-switch > div > a > img {
+    margin-top: -2pt;
+    margin-bottom: -2pt;
+}
+#lang-switch > div > a:hover {
+    background-image: url('../img/buttons/Pony_language_bg2.png');
+}
 #logo {
     max-width: 510pt;
+    margin-top: 10pt;
 }
 #timer {
     display: none;
@@ -71,34 +116,42 @@ body {
 #timer-value-1, #timer-value-2 {
     font-weight: bold;
 }
+#menu {
+    display: inline-block;
+    font-family: jeff;
+    font-size: 14pt;
+}
 @media (min-width: 280pt) {
     #logo {
         margin-top: -15pt;
     }
 }
 @media (min-width: 540pt) {
+    #lang-switch {
+        top: 25pt;
+    }
     #logo {
         margin-top: -24pt;
-    } 
+    }
+    #menu {
+        margin-top: -14pt;
+    }
 }
 @media (min-width: 780pt) {
-    #timer {
+    #timer.active-timer {
         display: block;
     }
 }
 @media (min-width: 860pt) {
-    #timer {
+    #timer.active-timer {
         right: 5%;
     }
-}
-#menu {
-    display: inline-block;
-    font-family: jeff;
-    font-size: 14pt;
 }
 #menu > div {
     display: inline-block;
     position: relative;
+    margin-top: 14pt;
+    margin-bottom: 14pt;
 }
 #menu > div > div {
     text-align: left;
@@ -119,6 +172,8 @@ body {
     color: #000;
 }
 #menu > div > a {
+    display: inline-block;
+    height: 20pt;
     position: relative;
     color: #000;
     text-decoration: none;
@@ -129,6 +184,8 @@ body {
     margin-right: 10pt;
     padding-top: 19pt;
     padding-bottom: 25pt;
+    margin-top: -19pt;
+    margin-bottom: -25pt;
     padding-left: 6pt;
     padding-right: 6pt;
 }
@@ -144,9 +201,11 @@ body {
 }
 #menu-1 > a {
     background-image: url('../img/buttons/menu_pony_01.png');
+    min-width: 54pt;
 }
 #menu-2 > a {
     background-image: url('../img/buttons/menu_pony_02.png');
+    min-width: 126pt;
     z-index: 9;
 }
 #menu-3 > a {
@@ -155,6 +214,7 @@ body {
 }
 #menu-4 > a {
     background-image: url('../img/buttons/menu_pony_04.png');
+    min-width: 97pt;
 }
 #menu-1:hover > a {
     background-image: url('../img/buttons/menu_pony_01_hover.png');
@@ -168,38 +228,76 @@ body {
 #menu-4:hover > a {
     background-image: url('../img/buttons/menu_pony_04_hover.png');
 }
-#menu-2:hover > div {
-    display: block;
-    background-image: url('../img/menu/menu-21.png');
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    top: 20pt;
-    left: 7pt;
-    width: 80pt;
-    z-index: 12;
+@media (min-width: 680pt) {
+    #lang-switch:hover > div {
+        display: block;
+    }
+    #menu-2:hover > div {
+        display: block;
+        background-image: url('../img/menu/menu-21.png');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        top: 20pt;
+        left: 7pt;
+        width: 80pt;
+        z-index: 12;
+    }
+    #menu-3:hover > div {
+        display: block;
+        background-image: url('../img/menu/menu-22.png');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        top: 15pt;
+        left: 0pt;
+        width: 222pt;
+        padding-top: 6pt;
+        padding-left: 6pt;
+        padding-bottom: 8pt;
+        z-index: 10;
+    }
+    #menu-4:hover > div {
+        display: block;
+        background-image: url('../img/menu/menu-23.png');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        top: 18pt;
+        left: -2pt;
+        width: 180pt;
+        padding-top: 6pt;
+        padding-left: 8pt;
+        padding-bottom: 24pt;
+    }
+    #menu-4:hover > div.five-items {
+        width: 220pt;
+    }
 }
-#menu-3:hover > div {
-    display: block;
-    background-image: url('../img/menu/menu-22.png');
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    top: 14pt;
-    left: 0pt;
-    width: 222pt;
-    padding-top: 6pt;
-    padding-left: 6pt;
-    padding-bottom: 8pt;
-    z-index: 10;
+.faq-section {
+	display: inline-block;
+	text-align: left;
 }
-#menu-4:hover > div {
-    display: block;
-    background-image: url('../img/menu/menu-23.png');
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    top: 18pt;
-    left: -2зеpt;
-    width: 200pt;
-    padding-top: 6pt;
-    padding-left: 8pt;
-    padding-bottom: 24pt;
+#links {
+	display: inline-block;
+	text-align: left;
+}
+#lang-links {
+	display: inline-block;
+	text-align: left;
+}
+#lang-links ul {
+	padding-left: 10pt;
+}
+#lang-links li {
+	padding-top: 2pt;
+	padding-bottom: 2pt;
+}
+#lang-links a {
+	text-decoration: none;
+}
+#lang-links a span {
+	text-decoration: underline;
+}
+.lang-select-flag {
+	height: 10pt;
+	box-shadow: 0 0 5pt 0 rgba(0,0,0,0.4);
+    vertical-align: middle;
 }

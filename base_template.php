@@ -202,16 +202,30 @@
 		<meta name="msapplication-TileImage" content="/res/ms-icon-144x144.png" />
 		<meta name="theme-color" content="#1a3c70" />
 		<title><?php echo $head_title; ?></title>
-		<!--<script type="text/javascript" src="//vk.com/js/api/openapi.js?120"></script>-->
 	</head>
 	<body>
 		<div id="background-left"></div>
         <div id="background-right"></div>
         <div id="page-content">
-            <img id="logo" src="./img/Pony_top.svg" alt="Лого" />
+			<div id="lang-switch">
+				<?php
+					if (isset($force_lang_code)) {
+						$redir_document_name = 'index';
+					} else {
+						$redir_document_name = $document_name;
+					}
+				?>
+				<a href="select-language.php?redir=<?php echo $redir_document_name; ?>"><img src="./img/buttons/Pony_language_button_<?php echo $lang_code; ?>.png" alt="Select your language" /></a>
+				<div>
+					<?php if ($lang_code != 'ru') { ?><a href="select-language.php?lang=ru&redir=<?php echo $redir_document_name; ?>"><img src="./img/buttons/Pony_language_button_ru.png" /></a><?php } ?>
+					<?php if ($lang_code != 'en') { ?><a href="select-language.php?lang=en&redir=<?php echo $redir_document_name; ?>"><img src="./img/buttons/Pony_language_button_en.png" /></a><?php } ?>
+					<?php if ($lang_code != 'cs') { ?><a href="select-language.php?lang=cs&redir=<?php echo $redir_document_name; ?>"><img src="./img/buttons/Pony_language_button_cs.png" /></a><?php } ?>
+				</div>
+			</div>
+            <a href="/"><img id="logo" src="./img/Pony_top.svg" alt="Лого" /></a>
             <div id="menu">
 				<div id="menu-1">
-					<a href="index.php"><?php echo $localized_strings[$lang_code]['main-page']; ?></a>
+					<a href="/"><?php echo $localized_strings[$lang_code]['main-page']; ?></a>
 				</div>
 				<div id="menu-2">
 					<a href="about.php"><?php echo $localized_strings[$lang_code]['about']; ?></a>
@@ -231,7 +245,7 @@
 				</div>
 				<div id="menu-4">
 					<a href="reg.php"><?php echo $localized_strings[$lang_code]['reg']; ?></a>
-					<div>
+					<div<?php if ($lang_code == 'ru') echo " class=\"five-items\""; ?>>
 						<a href="stands-reg.php"><?php echo $localized_strings[$lang_code]['stands']; ?></a>
 						<a href="cosplay-reg.php"><?php echo $localized_strings[$lang_code]['cosplay']; ?></a>
 						<a href="singing-contest-reg.php"><?php echo $localized_strings[$lang_code]['singing-contest']; ?></a>
@@ -298,18 +312,60 @@
 			</div>-->
 		</div>
 		<div id="timer">
-				<div>
-					<span>До фестиваля</span>
-					<br />
-					<span>осталось</span>
-					<br />
-					<span>ровно</span>
-					<br />
-					<span id="timer-value-1">XX дней</span>
-					<br />
-					<span id="timer-value-2">00:00:00</span>
-				</div>
-        	</div>
+			<div>
+				<span>До фестиваля</span>
+				<br />
+				<span>осталось</span>
+				<br />
+				<span>ровно</span>
+				<br />
+				<span id="timer-value-1">XX дней</span>
+				<br />
+				<span id="timer-value-2">00:00:00</span>
+			</div>
+		</div>
+		<script>
+			function formatDays(days, langCode) {
+				switch (langCode) {
+					case 'ru':
+						if ((days % 10 == 1) && (days % 100 != 11))
+							return days + ' день';
+						if ((days % 100 < 12) && (days % 100 > 14) && (days % 10 >= 2) && (days % 10 <= 4))
+							return days + ' дня';
+						return days + ' дней';
+					case 'en':
+						return days + ' ' + (days != 1 ? 'days' : 'day');
+					case 'cs':
+						if (days == 1)
+							return days + ' den';
+						if ((days >= 2) && (days <= 4))
+							return days + ' dny';
+						return days + ' dní';
+				}
+			}
+			var targetTime = 1491039000000; // Apr 01 2017 12:30 (MSK)
+			if (!Date.now) {
+				Date.now = function() { return new Date().getTime(); }
+			}
+			document.getElementById("timer").className = "active-timer";
+			var timerVal1 = document.getElementById("timer-value-1");
+			var timerVal2 = document.getElementById("timer-value-2");
+			var updateTimer = function () {
+				var remainingTime = targetTime - Date.now();
+				var time = new Date(remainingTime);
+				var days = Math.ceil(remainingTime / (1000 * 60 * 60 * 24));
+				timerVal1.innerText =
+					formatDays(days, '<?php echo $lang_code; ?>');
+				timerVal2.innerText =
+					time.getUTCHours()
+					+ ':' +
+					("0" + time.getUTCMinutes()).substr(-2)
+					+ ':' +
+					("0" + time.getUTCSeconds()).substr(-2);
+			}
+			updateTimer();
+			setInterval(updateTimer, 1000);
+		</script>
 	</body>
 </html>
 <?php
