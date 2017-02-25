@@ -90,6 +90,10 @@ body {
     max-width: 510pt;
     margin-top: 10pt;
 }
+.section-title {
+    margin-top: 30pt;
+    font-size: 20pt;
+}
 #timer {
     display: none;
     position: absolute;
@@ -300,4 +304,66 @@ body {
 	height: 10pt;
 	box-shadow: 0 0 5pt 0 rgba(0,0,0,0.4);
     vertical-align: middle;
+}
+#footer {
+    margin-top: 14pt;
+}
+#footer > div {
+    display: inline-block;
+    vertical-align: top;
+}
+#age-rating {
+    width: 40pt;
+    margin-top: 18pt;
+    margin-left: -14pt;
+    margin-right: -14pt;
+}
+#footer-main {
+    background-image: url('../img/footer/yellow-spot.svg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding-top: 8pt;
+    padding-left: 20pt;
+    padding-right: 10pt;
+    font-size: 10pt;
+    text-align: right;
+}
+#rules-link {
+    display: inline-block;
+    padding-top: 10pt;
+    padding-bottom: 10pt;
+    padding-left: 4pt;
+    padding-right: 4pt;
+    background-image: url('../img/footer/rules-bg.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: #000;
+    text-decoration: none;
+}
+#contacts {
+    margin-top: 14pt;
+}
+#contacts a {
+    display: block;
+    color: #4E76A3;
+    text-decoration: none;
+    font-family: jeff;
+    font-size: 9pt;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 6pt;
+}
+#vk-link {
+    background-image: url('../img/footer/vk-bg.svg');
+    padding-left: 21pt;
+    padding-right: 21pt;
+    padding-top: 5pt;
+    padding-bottom: 4pt;
+}
+#mail-link {
+    background-image: url('../img/footer/mail-bg.svg');
+    padding-left: 25pt;
+    padding-right: 10pt;
+    padding-top: 2pt;
+    padding-bottom: 6pt;
 }

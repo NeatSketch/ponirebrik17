@@ -26,7 +26,10 @@
 			'footer-date' => '1 апреля 2017',
 			'footer-rules' => 'Ознакомьтесь с правилами',
 			'volunteers' => 'Волонтёры',
-			'volunteers-reg' => 'Регистрация волонтеров'
+			'volunteers-reg' => 'Регистрация волонтеров',
+			'timer-str1' => 'До фестиваля',
+			'timer-str2' => 'осталось',
+			'timer-str3' => 'ровно'
 		),
 		'en' => array(
 			'ponirebrik' => 'Ponirebrik',
@@ -52,7 +55,10 @@
 			'press-reg' => 'Media registration',
 			'footer-title' => 'Ponirebrik Convention',
 			'footer-date' => 'April 1, 2017',
-			'footer-rules' => 'Rules of the Convention'
+			'footer-rules' => 'Rules of the Convention',
+			'timer-str1' => 'The con',
+			'timer-str2' => 'will start',
+			'timer-str3' => 'in'
 		),
 		'cs' => array(
 			'ponirebrik' => 'Ponirebrik',
@@ -78,7 +84,10 @@
 			'press-reg' => 'Registrace zátupců médií',
 			'footer-title' => 'Festival Ponirebrik',
 			'footer-date' => '1.dubna 2017',
-			'footer-rules' => 'Podívejte se na pravidla'
+			'footer-rules' => 'Podívejte se na pravidla',
+			'timer-str1' => 'Do',
+			'timer-str2' => 'festivalu:',
+			'timer-str3' => ''
 		)
 	);
 
@@ -257,30 +266,11 @@
 					</div>
 				</div>
 			</div>
-			
-			<!--<div>
-				<div>
-					<?php
-						if (isset($force_lang_code)) {
-							$redir_document_name = 'index';
-						} else {
-							$redir_document_name = $document_name;
-						}
-					?>
-					<a href="select-language.php?redir=<?php echo $redir_document_name; ?>"><img class="lang-select-flag" src="./img/flag-<?php echo $lang_code; ?>.png" /> <?php echo strtoupper($lang_code); ?> <span id="lang-select-arrow">▼</span></a>
-					<div class="dropdown">
-						<a href="select-language.php?lang=ru&redir=<?php echo $redir_document_name; ?>"><img class="lang-select-flag" src="./img/flag-ru.png" /> RU</a>
-						<a href="select-language.php?lang=en&redir=<?php echo $redir_document_name; ?>"><img class="lang-select-flag" src="./img/flag-en.png" /> EN</a>
-						<a href="select-language.php?lang=cs&redir=<?php echo $redir_document_name; ?>"><img class="lang-select-flag" src="./img/flag-cs.png" /> CS</a>
-					</div>
-				</div>
-			</div>-->
-		
-			<h1 class="section-title<?php if ($lang_code == 'cs') echo ' altfont'; ?>"><?php echo $title; ?></h1>
-			<?php
-				echo $content;
-			?>
-			<!--<div id="footer" class="parallax">
+			<div id="main-content">
+				<h1 class="section-title<?php if ($lang_code == 'cs') echo ' altfont'; ?>"><?php echo $title; ?></h1>
+				<?php
+					echo $content;
+				?>
 <?php
 	if ($lang_code == 'en') {
 ?>
@@ -290,34 +280,33 @@
 <?php
 	}
 ?>
-				<div>
+				<div id="footer">
 					<div>
-						<span id="age-rating">14+</span>
+						<img id="age-rating" src="./img/footer/age_14.png" alt="14+" />
 					</div>
-					<div>
-						<p><?php echo $localized_strings[$lang_code]['footer-title']; ?><br/><?php echo $localized_strings[$lang_code]['footer-date']; ?><br/><a href="rules.php"><?php echo $localized_strings[$lang_code]['footer-rules']; ?></a></p>
+					<div id="footer-main">
+						<p>
+							<?php echo $localized_strings[$lang_code]['footer-title']; ?>
+							<br/>
+							<?php echo $localized_strings[$lang_code]['footer-date']; ?>
+							<br/>
+							<a id="rules-link" href="rules.php"><?php echo $localized_strings[$lang_code]['footer-rules']; ?></a>
+						</p>
 					</div>
 					<div id="contacts">
-						<a href="https://vk.com/ponirebrik">
-							<img src="./img/vk_icon.png" alt="Группа ВКонтакте" />
-							<span>/ponirebrik</span>
-						</a>
-						<br />
-						<a href="mailto:mail@ponirebrik.ru">
-							<img src="./img/email_icon.png" alt="Электронная почта" />
-							<span>mail@ponirebrik.ru</span>
-						</a>
+						<a id="vk-link" href="https://vk.com/ponirebrik">.com/ponirebrik</a>
+						<a id="mail-link" href="mailto:mail@ponirebrik.ru">mail@ponirebrik.ru</a>
 					</div>
 				</div>
-			</div>-->
+			</div>
 		</div>
 		<div id="timer">
 			<div>
-				<span>До фестиваля</span>
+				<span><?php echo $localized_strings[$lang_code]['timer-str1']; ?></span>
 				<br />
-				<span>осталось</span>
+				<span><?php echo $localized_strings[$lang_code]['timer-str2']; ?></span>
 				<br />
-				<span>ровно</span>
+				<span><?php echo $localized_strings[$lang_code]['timer-str3']; ?></span>
 				<br />
 				<span id="timer-value-1">XX дней</span>
 				<br />
@@ -352,16 +341,20 @@
 			var timerVal2 = document.getElementById("timer-value-2");
 			var updateTimer = function () {
 				var remainingTime = targetTime - Date.now();
-				var time = new Date(remainingTime);
-				var days = Math.ceil(remainingTime / (1000 * 60 * 60 * 24));
-				timerVal1.innerText =
-					formatDays(days, '<?php echo $lang_code; ?>');
-				timerVal2.innerText =
-					time.getUTCHours()
-					+ ':' +
-					("0" + time.getUTCMinutes()).substr(-2)
-					+ ':' +
-					("0" + time.getUTCSeconds()).substr(-2);
+				if (remainingTime <= 0) {
+					document.getElementById("timer").className = "";
+				} else {
+					var time = new Date(remainingTime);
+					var days = Math.ceil(remainingTime / (1000 * 60 * 60 * 24));
+					timerVal1.innerText =
+						formatDays(days, '<?php echo $lang_code; ?>');
+					timerVal2.innerText =
+						time.getUTCHours()
+						+ ':' +
+						("0" + time.getUTCMinutes()).substr(-2)
+						+ ':' +
+						("0" + time.getUTCSeconds()).substr(-2);
+				}
 			}
 			updateTimer();
 			setInterval(updateTimer, 1000);
