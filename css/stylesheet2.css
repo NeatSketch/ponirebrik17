@@ -1,0 +1,369 @@
+@font-face {
+    font-family: jeff;
+    src: url('../res/v_CCJeffCampbell_v1_1.ttf');
+}
+@font-face {
+    font-family: candara;
+    src: url('../res/Candara.ttf');
+}
+html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    position: relative;
+    min-height: 100%;
+    font-family: candara;
+    font-size: 12pt;
+}
+#background-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-image: url('../img/Background_left.png');
+    background-position-x: left;
+    background-repeat: repeat-y;
+    background-size: 150pt auto;
+    z-index: 1;
+}
+#background-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-image: url('../img/Background_right.png');
+    background-position-x: right;
+    background-repeat: repeat-y;
+    background-size: 150pt auto;
+    z-index: 2;
+}
+#page-content {
+    position: relative;
+    max-width: 540pt;
+    height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+    z-index: 3;
+    padding-left: 14pt;
+    padding-right: 14pt;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 16pt 16pt rgba(255, 255, 255, 0.7);
+}
+#lang-switch {
+    position: absolute;
+    top: 10pt;
+    right: 20pt;
+    background-image: url('../img/buttons/Pony_language_bg.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    width: 45pt;
+    height: 20pt;
+    z-index: 20;
+}
+#lang-switch img {
+    width: 45pt;
+}
+#lang-switch > div {
+    display: none;
+    position: absolute;
+    top: 22pt;
+    left: 0;
+}
+#lang-switch > div > a {
+    display: block;
+    width: 45pt;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+#lang-switch > div > a > img {
+    margin-top: -2pt;
+    margin-bottom: -2pt;
+}
+#lang-switch > div > a:hover {
+    background-image: url('../img/buttons/Pony_language_bg2.png');
+}
+#logo {
+    max-width: 510pt;
+    margin-top: 10pt;
+}
+.section-title {
+    margin-top: 30pt;
+    font-size: 20pt;
+}
+#timer {
+    display: none;
+    position: absolute;
+    right: 14pt;
+    top: -10pt;
+    width: 150pt;
+    height: 150pt;
+    z-index: 4;
+    text-align: center;
+    background-image: url('../img/timer.svg');
+    background-repeat: no-repeat;
+    background-position-x: -20pt;
+    background-position-y: -5pt;
+    background-size: 130%;
+}
+#timer > div {
+    position: absolute;
+    font-family: jeff;
+    font-size: 8pt;
+    left: 48pt;
+    right: 20pt;
+    top: 65pt;
+}
+#timer-value-1, #timer-value-2 {
+    font-weight: bold;
+}
+#menu {
+    display: inline-block;
+    font-family: jeff;
+    font-size: 14pt;
+}
+@media (min-width: 280pt) {
+    #logo {
+        margin-top: -15pt;
+    }
+}
+@media (min-width: 540pt) {
+    #lang-switch {
+        top: 25pt;
+    }
+    #logo {
+        margin-top: -24pt;
+    }
+    #menu {
+        margin-top: -14pt;
+    }
+}
+@media (min-width: 780pt) {
+    #timer.active-timer {
+        display: block;
+    }
+}
+@media (min-width: 860pt) {
+    #timer.active-timer {
+        right: 5%;
+    }
+}
+#menu > div {
+    display: inline-block;
+    position: relative;
+    margin-top: 14pt;
+    margin-bottom: 14pt;
+}
+#menu > div > div {
+    text-align: left;
+    font-size: 12pt;
+}
+#menu > div > div > a {
+    display: block;
+    margin-left: 10pt;
+    margin-top: 5pt;
+    margin-bottom: 8pt;
+    color: #000;
+    text-decoration: none;
+}
+#menu > div > div > a:visited {
+    color: #000;
+}
+#menu > div > div > a:active {
+    color: #000;
+}
+#menu > div > a {
+    display: inline-block;
+    height: 20pt;
+    position: relative;
+    color: #000;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+    margin-left: 10pt;
+    margin-right: 10pt;
+    padding-top: 19pt;
+    padding-bottom: 25pt;
+    margin-top: -19pt;
+    margin-bottom: -25pt;
+    padding-left: 6pt;
+    padding-right: 6pt;
+}
+#menu > div > a:visited {
+    color: #000;
+}
+#menu > div > a:active {
+    color: #000;
+}
+#menu > div > div {
+    display: none;
+    position: absolute;
+}
+#menu-1 > a {
+    background-image: url('../img/buttons/menu_pony_01.png');
+    min-width: 54pt;
+}
+#menu-2 > a {
+    background-image: url('../img/buttons/menu_pony_02.png');
+    min-width: 126pt;
+    z-index: 9;
+}
+#menu-3 > a {
+    background-image: url('../img/buttons/menu_pony_03.png');
+    z-index: 11;
+}
+#menu-4 > a {
+    background-image: url('../img/buttons/menu_pony_04.png');
+    min-width: 97pt;
+}
+#menu-1:hover > a {
+    background-image: url('../img/buttons/menu_pony_01_hover.png');
+}
+#menu-2:hover > a {
+    background-image: url('../img/buttons/menu_pony_02_hover.png');
+}
+#menu-3:hover > a {
+    background-image: url('../img/buttons/menu_pony_03_hover.png');
+}
+#menu-4:hover > a {
+    background-image: url('../img/buttons/menu_pony_04_hover.png');
+}
+@media (min-width: 680pt) {
+    #lang-switch:hover > div {
+        display: block;
+    }
+    #menu-2:hover > div {
+        display: block;
+        background-image: url('../img/menu/menu-21.png');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        top: 20pt;
+        left: 7pt;
+        width: 80pt;
+        z-index: 12;
+    }
+    #menu-3:hover > div {
+        display: block;
+        background-image: url('../img/menu/menu-22.png');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        top: 15pt;
+        left: 0pt;
+        width: 222pt;
+        padding-top: 6pt;
+        padding-left: 6pt;
+        padding-bottom: 8pt;
+        z-index: 10;
+    }
+    #menu-4:hover > div {
+        display: block;
+        background-image: url('../img/menu/menu-23.png');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        top: 18pt;
+        left: -2pt;
+        width: 180pt;
+        padding-top: 6pt;
+        padding-left: 8pt;
+        padding-bottom: 24pt;
+    }
+    #menu-4:hover > div.five-items {
+        width: 220pt;
+    }
+}
+.faq-section {
+	display: inline-block;
+	text-align: left;
+}
+#links {
+	display: inline-block;
+	text-align: left;
+}
+#lang-links {
+	display: inline-block;
+	text-align: left;
+}
+#lang-links ul {
+	padding-left: 10pt;
+}
+#lang-links li {
+	padding-top: 2pt;
+	padding-bottom: 2pt;
+}
+#lang-links a {
+	text-decoration: none;
+}
+#lang-links a span {
+	text-decoration: underline;
+}
+.lang-select-flag {
+	height: 10pt;
+	box-shadow: 0 0 5pt 0 rgba(0,0,0,0.4);
+    vertical-align: middle;
+}
+#footer {
+    margin-top: 14pt;
+}
+#footer > div {
+    display: inline-block;
+    vertical-align: top;
+}
+#age-rating {
+    width: 40pt;
+    margin-top: 18pt;
+    margin-left: -14pt;
+    margin-right: -14pt;
+}
+#footer-main {
+    background-image: url('../img/footer/yellow-spot.svg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding-top: 8pt;
+    padding-left: 20pt;
+    padding-right: 10pt;
+    font-size: 10pt;
+    text-align: right;
+}
+#rules-link {
+    display: inline-block;
+    padding-top: 10pt;
+    padding-bottom: 10pt;
+    padding-left: 4pt;
+    padding-right: 4pt;
+    background-image: url('../img/footer/rules-bg.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: #000;
+    text-decoration: none;
+}
+#contacts {
+    margin-top: 14pt;
+}
+#contacts a {
+    display: block;
+    color: #4E76A3;
+    text-decoration: none;
+    font-family: jeff;
+    font-size: 9pt;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 6pt;
+}
+#vk-link {
+    background-image: url('../img/footer/vk-bg.svg');
+    padding-left: 21pt;
+    padding-right: 21pt;
+    padding-top: 5pt;
+    padding-bottom: 4pt;
+}
+#mail-link {
+    background-image: url('../img/footer/mail-bg.svg');
+    padding-left: 25pt;
+    padding-right: 10pt;
+    padding-top: 2pt;
+    padding-bottom: 6pt;
+}

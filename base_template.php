@@ -26,7 +26,10 @@
 			'footer-date' => '1 апреля 2017',
 			'footer-rules' => 'Ознакомьтесь с правилами',
 			'volunteers' => 'Волонтёры',
-			'volunteers-reg' => 'Регистрация волонтеров'
+			'volunteers-reg' => 'Регистрация волонтеров',
+			'timer-str1' => 'До фестиваля',
+			'timer-str2' => 'осталось',
+			'timer-str3' => 'ровно'
 		),
 		'en' => array(
 			'ponirebrik' => 'Ponirebrik',
@@ -52,7 +55,10 @@
 			'press-reg' => 'Media registration',
 			'footer-title' => 'Ponirebrik Convention',
 			'footer-date' => 'April 1, 2017',
-			'footer-rules' => 'Rules of the Convention'
+			'footer-rules' => 'Rules of the Convention',
+			'timer-str1' => 'The con',
+			'timer-str2' => 'will start',
+			'timer-str3' => 'in'
 		),
 		'cs' => array(
 			'ponirebrik' => 'Ponirebrik',
@@ -78,7 +84,10 @@
 			'press-reg' => 'Registrace zátupců médií',
 			'footer-title' => 'Festival Ponirebrik',
 			'footer-date' => '1.dubna 2017',
-			'footer-rules' => 'Podívejte se na pravidla'
+			'footer-rules' => 'Podívejte se na pravidla',
+			'timer-str1' => 'Do',
+			'timer-str2' => 'festivalu:',
+			'timer-str3' => ''
 		)
 	);
 
@@ -183,7 +192,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link href="css/stylesheet.css?2" rel="stylesheet" type="text/css" />
+		<link href="css/stylesheet2.css" rel="stylesheet" type="text/css" />
 		<link rel="apple-touch-icon" sizes="57x57" href="/res/apple-icon-57x57.png" />
 		<link rel="apple-touch-icon" sizes="60x60" href="/res/apple-icon-60x60.png" />
 		<link rel="apple-touch-icon" sizes="72x72" href="/res/apple-icon-72x72.png" />
@@ -202,110 +211,154 @@
 		<meta name="msapplication-TileImage" content="/res/ms-icon-144x144.png" />
 		<meta name="theme-color" content="#1a3c70" />
 		<title><?php echo $head_title; ?></title>
-		<!--<script type="text/javascript" src="//vk.com/js/api/openapi.js?120"></script>-->
 	</head>
 	<body>
-		<div id="header" class="parallax">
-			<!--<div id="header-main">
-				<div id="header-top">
-					<span id="age-rating">14+</span>
-					<span id="event-date"><strong>31</strong> января</span>
-				</div>
-				<img id="logo" src="./img/Logo_resized_new.png" alt="Лого" />
-			</div>-->
-			<a href="index.php"><img id="logo-text" src="./img/Logo-text.png" alt="Лого" /></a>
-			<div id="title-bar">
+		<div id="background-left"></div>
+        <div id="background-right"></div>
+        <div id="page-content">
+			<div id="lang-switch">
+				<?php
+					if (isset($force_lang_code)) {
+						$redir_document_name = 'index';
+					} else {
+						$redir_document_name = $document_name;
+					}
+				?>
+				<a href="select-language.php?redir=<?php echo $redir_document_name; ?>"><img src="./img/buttons/Pony_language_button_<?php echo $lang_code; ?>.png" alt="Select your language" /></a>
 				<div>
-					<div><a href="index.php"><?php echo $localized_strings[$lang_code]['main-page']; ?></a></div>
+					<?php if ($lang_code != 'ru') { ?><a href="select-language.php?lang=ru&redir=<?php echo $redir_document_name; ?>"><img src="./img/buttons/Pony_language_button_ru.png" /></a><?php } ?>
+					<?php if ($lang_code != 'en') { ?><a href="select-language.php?lang=en&redir=<?php echo $redir_document_name; ?>"><img src="./img/buttons/Pony_language_button_en.png" /></a><?php } ?>
+					<?php if ($lang_code != 'cs') { ?><a href="select-language.php?lang=cs&redir=<?php echo $redir_document_name; ?>"><img src="./img/buttons/Pony_language_button_cs.png" /></a><?php } ?>
+				</div>
+			</div>
+            <a href="/"><img id="logo" src="./img/Pony_top.svg" alt="Лого" /></a>
+            <div id="menu">
+				<div id="menu-1">
+					<a href="/"><?php echo $localized_strings[$lang_code]['main-page']; ?></a>
+				</div>
+				<div id="menu-2">
+					<a href="about.php"><?php echo $localized_strings[$lang_code]['about']; ?></a>
 					<div>
-						<a href="about.php"><?php echo $localized_strings[$lang_code]['about']; ?></a>
-						<div class="dropdown">
-							<a href="faq.php" title="<?php echo $localized_strings[$lang_code]['faq-tooltip']; ?>"><?php echo $localized_strings[$lang_code]['faq-menu']; ?></a>
-							<a href="rules.php"><?php echo $localized_strings[$lang_code]['rules']; ?></a>
-						</div>
-					</div>
-					<div>
-						<a href="tickets.php"><?php echo $localized_strings[$lang_code]['tickets']; ?></a>
-						<div class="dropdown">
-							<a href="ticket1.php"><?php echo $localized_strings[$lang_code]['ticket1']; ?></a>
-							<a href="ticket2.php"><?php echo $localized_strings[$lang_code]['ticket2']; ?></a>
-							<a href="ticket3.php"><?php echo $localized_strings[$lang_code]['ticket3']; ?></a>
-							<a href="ticket4.php"><?php echo $localized_strings[$lang_code]['ticket4']; ?></a>
-						</div>
-					</div>
-					<div>
-						<a href="reg.php"><?php echo $localized_strings[$lang_code]['reg']; ?></a>
-						<div class="dropdown">
-							<a href="stands-reg.php"><?php echo $localized_strings[$lang_code]['stands']; ?></a>
-							<a href="cosplay-reg.php"><?php echo $localized_strings[$lang_code]['cosplay']; ?></a>
-							<a href="singing-contest-reg.php"><?php echo $localized_strings[$lang_code]['singing-contest']; ?></a>
-							<a href="press-reg.php"><?php echo $localized_strings[$lang_code]['press']; ?></a>
-							<?php
-								if ($lang_code == 'ru')
-									echo "<a href=\"volunteers-reg.php\">{$localized_strings[$lang_code]['volunteers']}</a>\n";
-							?>
-						</div>
+						<a href="rules.php"><?php echo $localized_strings[$lang_code]['rules']; ?></a>
+						<a href="faq.php" title="<?php echo $localized_strings[$lang_code]['faq-tooltip']; ?>"><?php echo $localized_strings[$lang_code]['faq-menu']; ?></a>
 					</div>
 				</div>
-				<div>
+				<div id="menu-3">
+					<a href="tickets.php"><?php echo $localized_strings[$lang_code]['tickets']; ?></a>
 					<div>
+						<a href="ticket1.php"><?php echo $localized_strings[$lang_code]['ticket1']; ?></a>
+						<a href="ticket2.php"><?php echo $localized_strings[$lang_code]['ticket2']; ?></a>
+						<a href="ticket3.php"><?php echo $localized_strings[$lang_code]['ticket3']; ?></a>
+						<a href="ticket4.php"><?php echo $localized_strings[$lang_code]['ticket4']; ?></a>
+					</div>
+				</div>
+				<div id="menu-4">
+					<a href="reg.php"><?php echo $localized_strings[$lang_code]['reg']; ?></a>
+					<div<?php if ($lang_code == 'ru') echo " class=\"five-items\""; ?>>
+						<a href="stands-reg.php"><?php echo $localized_strings[$lang_code]['stands']; ?></a>
+						<a href="cosplay-reg.php"><?php echo $localized_strings[$lang_code]['cosplay']; ?></a>
+						<a href="singing-contest-reg.php"><?php echo $localized_strings[$lang_code]['singing-contest']; ?></a>
+						<a href="press-reg.php"><?php echo $localized_strings[$lang_code]['press']; ?></a>
 						<?php
-							if (isset($force_lang_code)) {
-								$redir_document_name = 'index';
-							} else {
-								$redir_document_name = $document_name;
-							}
+							if ($lang_code == 'ru')
+								echo "<a href=\"volunteers-reg.php\">{$localized_strings[$lang_code]['volunteers']}</a>\n";
 						?>
-						<a href="select-language.php?redir=<?php echo $redir_document_name; ?>"><img class="lang-select-flag" src="./img/flag-<?php echo $lang_code; ?>.png" /> <?php echo strtoupper($lang_code); ?> <span id="lang-select-arrow">▼</span></a>
-						<div class="dropdown">
-							<a href="select-language.php?lang=ru&redir=<?php echo $redir_document_name; ?>"><img class="lang-select-flag" src="./img/flag-ru.png" /> RU</a>
-							<a href="select-language.php?lang=en&redir=<?php echo $redir_document_name; ?>"><img class="lang-select-flag" src="./img/flag-en.png" /> EN</a>
-							<a href="select-language.php?lang=cs&redir=<?php echo $redir_document_name; ?>"><img class="lang-select-flag" src="./img/flag-cs.png" /> CS</a>
-						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div id="content" class="overlapping">
-			<div>
+			<div id="main-content">
 				<h1 class="section-title<?php if ($lang_code == 'cs') echo ' altfont'; ?>"><?php echo $title; ?></h1>
-				<div class="section-content">
-					<?php
-                        echo $content;
-                    ?>
-				</div>
-			</div>
-		</div>
-		<div id="footer" class="parallax">
+				<?php
+					echo $content;
+				?>
 <?php
 	if ($lang_code == 'en') {
 ?>
-			<div id="footer-addition">
-				<div>Website translation by <a href="http://darkcollaboration.deviantart.com/">Dark Room Collaboration</a></div>
-			</div>
+				<div id="footer-addition">
+					<div>Website translation by <a href="http://darkcollaboration.deviantart.com/">Dark Room Collaboration</a></div>
+				</div>
 <?php
 	}
 ?>
-			<div>
-				<div>
-					<span id="age-rating">14+</span>
-				</div>
-				<div>
-					<p><?php echo $localized_strings[$lang_code]['footer-title']; ?><br/><?php echo $localized_strings[$lang_code]['footer-date']; ?><br/><a href="rules.php"><?php echo $localized_strings[$lang_code]['footer-rules']; ?></a></p>
-				</div>
-				<div id="contacts">
-					<a href="https://vk.com/ponirebrik">
-						<img src="./img/vk_icon.png" alt="Группа ВКонтакте" />
-						<span>/ponirebrik</span>
-					</a>
-					<br />
-					<a href="mailto:mail@ponirebrik.ru">
-						<img src="./img/email_icon.png" alt="Электронная почта" />
-						<span>mail@ponirebrik.ru</span>
-					</a>
+				<div id="footer">
+					<div>
+						<img id="age-rating" src="./img/footer/age_14.png" alt="14+" />
+					</div>
+					<div id="footer-main">
+						<p>
+							<?php echo $localized_strings[$lang_code]['footer-title']; ?>
+							<br/>
+							<?php echo $localized_strings[$lang_code]['footer-date']; ?>
+							<br/>
+							<a id="rules-link" href="rules.php"><?php echo $localized_strings[$lang_code]['footer-rules']; ?></a>
+						</p>
+					</div>
+					<div id="contacts">
+						<a id="vk-link" href="https://vk.com/ponirebrik">.com/ponirebrik</a>
+						<a id="mail-link" href="mailto:mail@ponirebrik.ru">mail@ponirebrik.ru</a>
+					</div>
 				</div>
 			</div>
 		</div>
+		<div id="timer">
+			<div>
+				<span><?php echo $localized_strings[$lang_code]['timer-str1']; ?></span>
+				<br />
+				<span><?php echo $localized_strings[$lang_code]['timer-str2']; ?></span>
+				<br />
+				<span><?php echo $localized_strings[$lang_code]['timer-str3']; ?></span>
+				<br />
+				<span id="timer-value-1">XX дней</span>
+				<br />
+				<span id="timer-value-2">00:00:00</span>
+			</div>
+		</div>
+		<script>
+			function formatDays(days, langCode) {
+				switch (langCode) {
+					case 'ru':
+						if ((days % 10 == 1) && (days % 100 != 11))
+							return days + ' день';
+						if ((days % 100 < 12) && (days % 100 > 14) && (days % 10 >= 2) && (days % 10 <= 4))
+							return days + ' дня';
+						return days + ' дней';
+					case 'en':
+						return days + ' ' + (days != 1 ? 'days' : 'day');
+					case 'cs':
+						if (days == 1)
+							return days + ' den';
+						if ((days >= 2) && (days <= 4))
+							return days + ' dny';
+						return days + ' dní';
+				}
+			}
+			var targetTime = 1491039000000; // Apr 01 2017 12:30 (MSK)
+			if (!Date.now) {
+				Date.now = function() { return new Date().getTime(); }
+			}
+			document.getElementById("timer").className = "active-timer";
+			var timerVal1 = document.getElementById("timer-value-1");
+			var timerVal2 = document.getElementById("timer-value-2");
+			var updateTimer = function () {
+				var remainingTime = targetTime - Date.now();
+				if (remainingTime <= 0) {
+					document.getElementById("timer").className = "";
+				} else {
+					var time = new Date(remainingTime);
+					var days = Math.ceil(remainingTime / (1000 * 60 * 60 * 24));
+					timerVal1.innerText =
+						formatDays(days, '<?php echo $lang_code; ?>');
+					timerVal2.innerText =
+						time.getUTCHours()
+						+ ':' +
+						("0" + time.getUTCMinutes()).substr(-2)
+						+ ':' +
+						("0" + time.getUTCSeconds()).substr(-2);
+				}
+			}
+			updateTimer();
+			setInterval(updateTimer, 1000);
+		</script>
 	</body>
 </html>
 <?php
