@@ -319,7 +319,7 @@
 					case 'ru':
 						if ((days % 10 == 1) && (days % 100 != 11))
 							return days + ' день';
-						if ((days % 100 < 12) && (days % 100 > 14) && (days % 10 >= 2) && (days % 10 <= 4))
+						if (((days % 100 < 12) || (days % 100 > 14)) && (days % 10 >= 2) && (days % 10 <= 4))
 							return days + ' дня';
 						return days + ' дней';
 					case 'en':
