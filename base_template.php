@@ -345,7 +345,7 @@
 					document.getElementById("timer").className = "";
 				} else {
 					var time = new Date(remainingTime);
-					var days = Math.ceil(remainingTime / (1000 * 60 * 60 * 24));
+					var days = Math.ceil(remainingTime / (1000 * 60 * 60 * 24)) - 1;
 					timerVal1.innerText =
 						formatDays(days, '<?php echo $lang_code; ?>');
 					timerVal2.innerText =
