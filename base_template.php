@@ -9,7 +9,7 @@
 			'faq' => 'Часто задаваемые вопросы',
 			'rules' => 'Правила',
 			'tickets' => 'Билеты',
-			'ticket1' => 'Билет «Рядовой Путаница»',
+			/*'ticket1' => 'Билет «Рядовой Путаница»',
 			'ticket2' => 'Билет «Лейтенант Бардак»',
 			'ticket3' => 'Билет «Капитан Бедлам»',
 			'ticket4' => 'Билет «Генерал Переворот»',
@@ -21,16 +21,16 @@
 			'stands-reg' => 'Регистрация стендов',
 			'cosplay-reg' => 'Регистрация косплееров',
 			'singing-contest-reg' => 'Регистрация на вокальный конкурс',
-			'press-reg' => 'Регистрация прессы',
+			'press-reg' => 'Регистрация прессы',*/
 			'footer-title' => 'Фестиваль «Пониребрик»',
-			'footer-date' => '1 апреля 2017',
+			'footer-date' => '1 апреля 2018',
 			'footer-rules' => 'Ознакомьтесь с правилами',
-			'volunteers' => 'Волонтёры',
-			'volunteers-reg' => 'Регистрация волонтеров',
+			/*'volunteers' => 'Волонтёры',
+			'volunteers-reg' => 'Регистрация волонтеров',*/
 			'timer-str1' => 'До фестиваля',
 			'timer-str2' => 'осталось',
 			'timer-str3' => 'ровно'
-		),
+		)/*,
 		'en' => array(
 			'ponirebrik' => 'Ponirebrik',
 			'main-page' => 'Home',
@@ -59,7 +59,7 @@
 			'timer-str1' => 'The con',
 			'timer-str2' => 'will start',
 			'timer-str3' => 'in'
-		),
+		)*//*,
 		'cs' => array(
 			'ponirebrik' => 'Ponirebrik',
 			'main-page' => 'Domů',
@@ -88,7 +88,7 @@
 			'timer-str1' => 'Do',
 			'timer-str2' => 'festivalu:',
 			'timer-str3' => ''
-		)
+		)*/
 	);
 
 	$default_language = 'ru';
@@ -216,21 +216,21 @@
 		<div id="background-left"></div>
         <div id="background-right"></div>
         <div id="page-content">
-			<div id="lang-switch">
-				<?php
+			<!--<div id="lang-switch">
+				<?php/*
 					if (isset($force_lang_code)) {
 						$redir_document_name = 'index';
 					} else {
 						$redir_document_name = $document_name;
-					}
+					}*/
 				?>
-				<a href="select-language.php?redir=<?php echo $redir_document_name; ?>"><img src="./img/buttons/Pony_language_button_<?php echo $lang_code; ?>.png" alt="Select your language" /></a>
+				<a href="select-language.php?redir=<?php/* echo $redir_document_name; */?>"><img src="./img/buttons/Pony_language_button_<?php/* echo $lang_code; */?>.png" alt="Select your language" /></a>
 				<div>
-					<?php if ($lang_code != 'ru') { ?><a href="select-language.php?lang=ru&redir=<?php echo $redir_document_name; ?>"><img src="./img/buttons/Pony_language_button_ru.png" /></a><?php } ?>
-					<?php if ($lang_code != 'en') { ?><a href="select-language.php?lang=en&redir=<?php echo $redir_document_name; ?>"><img src="./img/buttons/Pony_language_button_en.png" /></a><?php } ?>
-					<?php if ($lang_code != 'cs') { ?><a href="select-language.php?lang=cs&redir=<?php echo $redir_document_name; ?>"><img src="./img/buttons/Pony_language_button_cs.png" /></a><?php } ?>
+					<?php /*if ($lang_code != 'ru') {*/ ?><a href="select-language.php?lang=ru&redir=<?php/* echo $redir_document_name; */?>"><img src="./img/buttons/Pony_language_button_ru.png" /></a><?php /*}*/ ?>
+					<?php /*if ($lang_code != 'en') {*/ ?><a href="select-language.php?lang=en&redir=<?php/* echo $redir_document_name; */?>"><img src="./img/buttons/Pony_language_button_en.png" /></a><?php /*}*/ ?>
+					<?php /*if ($lang_code != 'cs') {*/ ?><a href="select-language.php?lang=cs&redir=<?php/* echo $redir_document_name; */?>"><img src="./img/buttons/Pony_language_button_cs.png" /></a><?php /*}*/ ?>
 				</div>
-			</div>
+			</div>-->
             <a href="/"><img id="logo" src="./img/Pony_top.svg" alt="Лого" /></a>
             <div id="menu">
 				<div id="menu-1">
@@ -238,33 +238,33 @@
 				</div>
 				<div id="menu-2">
 					<a href="about.php"><?php echo $localized_strings[$lang_code]['about']; ?></a>
-					<div>
-						<a href="rules.php"><?php echo $localized_strings[$lang_code]['rules']; ?></a>
-						<a href="faq.php" title="<?php echo $localized_strings[$lang_code]['faq-tooltip']; ?>"><?php echo $localized_strings[$lang_code]['faq-menu']; ?></a>
-					</div>
+					<!--<div>
+						<a href="rules.php"><?php /*echo $localized_strings[$lang_code]['rules'];*/ ?></a>
+						<a href="faq.php" title="<?php /*echo $localized_strings[$lang_code]['faq-tooltip'];*/ ?>"><?php /*echo $localized_strings[$lang_code]['faq-menu'];*/ ?></a>
+					</div>-->
 				</div>
 				<div id="menu-3">
 					<a href="tickets.php"><?php echo $localized_strings[$lang_code]['tickets']; ?></a>
-					<div>
-						<a href="ticket1.php"><?php echo $localized_strings[$lang_code]['ticket1']; ?></a>
-						<a href="ticket2.php"><?php echo $localized_strings[$lang_code]['ticket2']; ?></a>
-						<a href="ticket3.php"><?php echo $localized_strings[$lang_code]['ticket3']; ?></a>
-						<a href="ticket4.php"><?php echo $localized_strings[$lang_code]['ticket4']; ?></a>
-					</div>
+					<!--<div>
+						<a href="ticket1.php"><?php/* echo $localized_strings[$lang_code]['ticket1'];*/ ?></a>
+						<a href="ticket2.php"><?php/* echo $localized_strings[$lang_code]['ticket2'];*/ ?></a>
+						<a href="ticket3.php"><?php/* echo $localized_strings[$lang_code]['ticket3'];*/ ?></a>
+						<a href="ticket4.php"><?php/* echo $localized_strings[$lang_code]['ticket4'];*/ ?></a>
+					</div>-->
 				</div>
-				<div id="menu-4">
-					<a href="reg.php"><?php echo $localized_strings[$lang_code]['reg']; ?></a>
-					<div<?php if ($lang_code == 'ru') echo " class=\"five-items\""; ?>>
-						<a href="stands-reg.php"><?php echo $localized_strings[$lang_code]['stands']; ?></a>
-						<a href="cosplay-reg.php"><?php echo $localized_strings[$lang_code]['cosplay']; ?></a>
-						<a href="singing-contest-reg.php"><?php echo $localized_strings[$lang_code]['singing-contest']; ?></a>
-						<a href="press-reg.php"><?php echo $localized_strings[$lang_code]['press']; ?></a>
+				<!--<div id="menu-4">
+					<a href="reg.php"><?php /*echo $localized_strings[$lang_code]['reg'];*/ ?></a>
+					<div<?php /*if ($lang_code == 'ru') echo " class=\"five-items\"";*/ ?>>
+						<a href="stands-reg.php"><?php /*echo $localized_strings[$lang_code]['stands'];*/ ?></a>
+						<a href="cosplay-reg.php"><?php /*echo $localized_strings[$lang_code]['cosplay'];*/ ?></a>
+						<a href="singing-contest-reg.php"><?php /*echo $localized_strings[$lang_code]['singing-contest'];*/ ?></a>
+						<a href="press-reg.php"><?php /*echo $localized_strings[$lang_code]['press'];*/ ?></a>
 						<?php
-							if ($lang_code == 'ru')
-								echo "<a href=\"volunteers-reg.php\">{$localized_strings[$lang_code]['volunteers']}</a>\n";
+							/*if ($lang_code == 'ru')
+								echo "<a href=\"volunteers-reg.php\">{$localized_strings[$lang_code]['volunteers']}</a>\n";*/
 						?>
 					</div>
-				</div>
+				</div>-->
 			</div>
 			<div id="main-content">
 				<h1 class="section-title<?php if ($lang_code == 'cs') echo ' altfont'; ?>"><?php echo $title; ?></h1>
@@ -332,7 +332,7 @@
 						return days + ' dní';
 				}
 			}
-			var targetTime = 1491039000000; // Apr 01 2017 12:30 (MSK)
+			var targetTime = 1522575000000; // Apr 01 2018 12:30 (MSK)
 			if (!Date.now) {
 				Date.now = function() { return new Date().getTime(); }
 			}
